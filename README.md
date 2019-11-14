@@ -4,7 +4,7 @@ GEOM101 Assignment
 <html>
 <body>
 <section>
-<div class="topnav">
+<div class="header">
   <a class="active" href="#home">Home</a>
   <a href="#team members">Team members</a>
   <a href="#services">Services</a>
