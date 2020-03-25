@@ -30,7 +30,6 @@
         window.setInterval(function() {
             map.getSource('canada').setData(url);
         }, 2000);
-arcgis/rest/services/kchehbou/kchehbouCanadaPro/MapServer
         map.addSource('canada', { type: 'geojson', data: url });
         map.addLayer({
             'id': 'canada',
