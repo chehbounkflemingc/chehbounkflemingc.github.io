@@ -43,7 +43,9 @@
       zoom: 11
     });
     L.esri.basemapLayer('Topographic').addTo(map);
-	
+const DeepRiverLayer0 = L.esri.featureLayer({
+      url: 'https://chibramsme.duckdns.org:6443/arcgis/rest/services/kchehbou/DeepRiverTrailMap/MapServer/0/'
+    }).addTo(map);	
      
 const DeepRiverLayer1 = L.esri.featureLayer({
       url: 'https://chibramsme.duckdns.org:6443/arcgis/rest/services/kchehbou/DeepRiverTrailMap/MapServer/1/'
@@ -51,9 +53,7 @@ const DeepRiverLayer1 = L.esri.featureLayer({
      const DeepRiverLayer2 = L.esri.featureLayer({
       url: 'https://chibramsme.duckdns.org:6443/arcgis/rest/services/kchehbou/DeepRiverTrailMap/MapServer/2/'
     }).addTo(map);
-     const DeepRiverLayer3 = L.esri.featureLayer({
-      url: 'https://chibramsme.duckdns.org:6443/arcgis/rest/services/kchehbou/DeepRiverTrailMap/MapServer/3/'
-    }).addTo(map);
+
 
 		
   </script>
