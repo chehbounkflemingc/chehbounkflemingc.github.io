@@ -50,9 +50,7 @@
     L.esri.basemapLayer('Topographic').addTo(map);
 	  
 /* Trails GeoJSON */
-var trails = new L.LayerGroup();
-L.geoJson(FourSeasons_MountainBikingTrails, {style: FourSeasons_MountainBikingTrailsStyle}).addTo(trails);	
-L.geoJson(DeepRiverTrails, {style: DeepRiverTrailsStyle}).addTo(trails);	
+L.geoJson(DeepRiverTrails).addTo(map);	
 
 		
   </script>
