@@ -23,8 +23,8 @@
     integrity="sha512-mhpdD3igvv7A/84hueuHzV0NIKFHmp2IvWnY5tIdtAHkHF36yySdstEVI11JZCmSY4TCvOkgEoW+zcV/rUfo0A=="
     crossorigin=""></script>
   <!-- Load GeoJSON Features fron GEOJSON files -->
-  <script src="FourSeasons_MountainBikingTrails.geojson" type="text/javascript"></script>
-  <script src="DeepRiverTrails.geojson" type="text/javascript"></script>
+    <!--<script src="FourSeasons_MountainBikingTrails.geojson" type="text/javascript"></script>  -->
+    <!--<script src="DeepRiverTrails.geojson" type="text/javascript"></script> -->
 
 
 	
@@ -50,7 +50,7 @@
     L.esri.basemapLayer('Topographic').addTo(map);
 	  
 /* Trails GeoJSON */
-var DeepRiverTrails= new L.GeoJson.AJAX(DeepRiverTrails.geojson);
+var DeepRiverTrails= new L.GeoJson.AJAX("DeepRiverTrails.geojson");
 DeepRiverTrails.addTo(map);	
 
 		
