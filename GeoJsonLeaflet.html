@@ -50,7 +50,8 @@
     L.esri.basemapLayer('Topographic').addTo(map);
 	  
 /* Trails GeoJSON */
-L.geoJson(DeepRiverTrails).addTo(map);	
+var DeepRiverTrails= new L.GeoJson.AJAX(DeepRiverTrails.geojson);
+DeepRiverTrails.addTo(map);	
 
 		
   </script>
