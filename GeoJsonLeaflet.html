@@ -24,7 +24,9 @@
     crossorigin=""></script>
   <!-- Load GeoJSON Features fron GEOJSON files -->
   <script src="FourSeasons_MountainBikingTrails.geojson" type="text/javascript"></script>
-    
+  <script src="DeepRiverTrails.geojson" type="text/javascript"></script>
+
+
 	
   <style>
     html,
@@ -47,10 +49,11 @@
     });
     L.esri.basemapLayer('Topographic').addTo(map);
 	  
-/* Four Season Trails GeoJSON */
-var fourseason = new L.LayerGroup();
-L.geoJson(FourSeasons_MountainBikingTrails, {style: fourseasonStyle}).addTo(fourseason);	
-     
+/* Trails GeoJSON */
+var trails = new L.LayerGroup();
+L.geoJson(FourSeasons_MountainBikingTrails, {style: FourSeasons_MountainBikingTrailsStyle}).addTo(trails);	
+L.geoJson(DeepRiverTrails, {style: DeepRiverTrailsStyle}).addTo(trails);	
+
 		
   </script>
 </body>
