@@ -57,14 +57,7 @@
 var geojsonLayer = new L.GeoJSON.AJAX("DeepRiverTrails.geojson");       
 geojsonLayer.addTo(map);
 
-L.geoJSON(geojsonLayer, {
-    style: function(feature) {
-        switch (feature.properties.Trail_Name) {
-            case 'Deep River - Cabin Trail - Base Lake Road': return {color: "#ff0000"};
-            case 'Deep River Walking Trail':   return {color: "#0000ff"};
-        }
-    }
-}).addTo(map);	  
+
 	  
 var myStyle = {
     "color": "#ff7800",
