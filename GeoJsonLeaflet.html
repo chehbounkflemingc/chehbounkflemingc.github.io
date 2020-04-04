@@ -36,6 +36,45 @@
       margin: 0;
       padding: 0;
     }
+
+	  /*Setup CSS Legend*/
+
+/*Legend specific: https://codepen.io/haakseth/pen/KQbjdO*/ 
+.legend {
+  padding: 6px 8px;
+  font: 14px Arial, Helvetica, sans-serif;
+  background: white;
+  background: rgba(255, 255, 255, 0.8);
+  /*box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);*/
+  /*border-radius: 5px;*/
+  line-height: 24px;
+  color: #555;
+}
+.legend h4 {
+  text-align: center;
+  font-size: 16px;
+  margin: 2px 12px 8px;
+  color: #777;
+}
+
+.legend span {
+  position: relative;
+  bottom: 3px;
+}
+
+.legend i {
+  width: 18px;
+  height: 18px;
+  float: left;
+  margin: 0 8px 0 0;
+  opacity: 0.7;
+}
+
+.legend i.icon {
+  background-size: 18px;
+  background-color: rgba(255, 255, 255, 1);
+}	  
+	  
   </style>
 
 </head>
@@ -57,6 +96,7 @@ function onEachFeature(feature, layer) {
         layer.bindPopup(feature.properties.Trail_Name);
     }
 }
+
 function onEachFeature1(feature, layer) {
     // does this feature have a property named popupContent?
     if (feature.properties && feature.properties.Name) {
@@ -64,24 +104,6 @@ function onEachFeature1(feature, layer) {
     }
 }
 
-var FourSeasons_MountainBikingTrails = new L.GeoJSON.AJAX("FourSeasons_MountainBikingTrails.geojson",
-{
-    style: function(feature) {
-        switch (feature.properties.Name) {
-            case 'B Loop': return {color: "#E60000"};
-            case 'D Loop':   return {color: "#FEB8B7"};
-	    case 'M Loop':   return {color: "#E3B3FD"};
-	    case 'S Loop':   return {color: "#ab72a5",opacity: 0.5};
-	    case 'H Loop':   return {color: "#70A800"};
-	    case 'D-M Loop':   return {color: "#cc765c"};
-	    case "Ray's Junction":   return {color: "#5c4f4b"};
-        }
-    },
-
-	onEachFeature: onEachFeature1
-
-});       
-FourSeasons_MountainBikingTrails.addTo(map);  
 	  
 var DeepRiverTrails = new L.GeoJSON.AJAX("DeepRiverTrails.geojson",
 {
@@ -100,6 +122,25 @@ var DeepRiverTrails = new L.GeoJSON.AJAX("DeepRiverTrails.geojson",
 DeepRiverTrails.addTo(map);
 
 
+var FourSeasons_MountainBikingTrails = new L.GeoJSON.AJAX("FourSeasons_MountainBikingTrails.geojson",
+{
+    style: function(feature) {
+        switch (feature.properties.Name) {
+            case 'B Loop': return {color: "#E60000"};
+            case 'D Loop':   return {color: "#FEB8B7"};
+	    case 'M Loop':   return {color: "#E3B3FD"};
+	    case 'S Loop':   return {color: "#ab72a5"};
+	    case 'H Loop':   return {color: "#70A800"};
+	    case 'D-M Loop':   return {color: "#cc765c"};
+	    case "Ray's Junction":   return {color: "#5c4f4b"};
+        }
+    },
+	onEachFeature: onEachFeature1
+
+});       
+FourSeasons_MountainBikingTrails.addTo(map);  
+
+
 var OttawaValleyRecreationalTrail = new L.GeoJSON.AJAX("OttawaValleyRecreationalTrail.geojson",
 {
 	color:'blue'
@@ -114,6 +155,23 @@ var BikeRoutes_VouageurRoute = new L.GeoJSON.AJAX("BikeRoutes_VouageurRoute.geoj
 });
 BikeRoutes_VouageurRoute.addTo(map);
 
+/*Legend specific: https://codepen.io/haakseth/pen/KQbjdO*/
+var legend = L.control({ position: "topright" });
+
+legend.onAdd = function(map) {
+  var div = L.DomUtil.create("div", "legend");
+  div.innerHTML += "<h4>Legend</h4>";
+  div.innerHTML += '<i style="background: #E60000"></i><span>Biking Trail Chalk River to Deep River</span><br>';
+  div.innerHTML += '<i style="background: #FEB8B7""></i><span>Deep River Walking Trail</span><br>';
+  div.innerHTML += '<i style="background: #E3B3FD"></i><span>Deep River - Cabin Trail - Base Lake Road</span><br>';
+  div.innerHTML += '<i style="background: #70A800"></i><span>Mount Martin Trail</span><br>';
+  div.innerHTML += '<i style="background: #cc765c"></i><span>Ottawa River Water Trail</span><br>';
+  div.innerHTML += '<i style="background: #e327cf"></i><span>Silver Spoon Trail System</span><br>';
+	
+  return div;
+};
+
+legend.addTo(map);
 		
   </script>
 </body>
