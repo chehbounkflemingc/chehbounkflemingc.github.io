@@ -68,7 +68,7 @@ var BikeRoutes_VouageurRoute = new L.GeoJSON.AJAX("BikeRoutes_VouageurRoute.geoj
 BikeRoutes_VouageurRoute.addTo(map);
 	  
 DeepRiverTrails.eachLayer(function (layer) {  
-  if(layer.feature.properties.Trail_Name == 'Deep River - Cabin Trail - Base Lake Road') {    
+  if(layer.features.properties.Trail_Name == 'Deep River - Cabin Trail - Base Lake Road') {    
     layer.setStyle({fillColor :'red'}) 
   }
 });
