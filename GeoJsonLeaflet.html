@@ -61,17 +61,10 @@ DeepRiverTrails.addTo(map);
 var OttawaValleyRecreationalTrail = new L.GeoJSON.AJAX("OttawaValleyRecreationalTrail.json");       
 OttawaValleyRecreationalTrail.addTo(map);
 
-var BikeRoutes_VouageurRoute = new L.GeoJSON.AJAX("BikeRoutes_VouageurRoute.geojson"), {
+var BikeRoutes_VouageurRoute = new L.GeoJSON.AJAX("BikeRoutes_VouageurRoute.json");       
+BikeRoutes_VouageurRoute, {
     color: 'red',
 }).addTo(mymap);
-
-L.geoJSON(BikeRoutes_VouageurRoute, {
-    style: function(feature) {
-        switch (feature.properties.Name) {
-            case 'Bike Vouageur Route': return {color: "#ff0000"};
-        }
-    }
-}).addTo(map);
 
 		
   </script>
