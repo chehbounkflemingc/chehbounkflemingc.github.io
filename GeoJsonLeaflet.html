@@ -52,7 +52,12 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 /* Trails GeoJSON */
  
 	  
-var FourSeasons_MountainBikingTrails = new L.GeoJSON.AJAX("FourSeasons_MountainBikingTrails.geojson");       
+var FourSeasons_MountainBikingTrails = new L.GeoJSON.AJAX("FourSeasons_MountainBikingTrails.geojson",
+{
+	fillOpacity: 0.5,
+	opacity: 0.5,
+	color:'yellow'
+});       
 FourSeasons_MountainBikingTrails.addTo(map);
 
 var DeepRiverTrails = new L.GeoJSON.AJAX("DeepRiverTrails.geojson",
