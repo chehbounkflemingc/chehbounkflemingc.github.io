@@ -55,10 +55,14 @@ function onEachFeature(feature, layer) {
     // does this feature have a property named popupContent?
     if (feature.properties && feature.properties.Trail_Name) {
         layer.bindPopup(feature.properties.Trail_Name);
-    },
- if (feature.properties && feature.properties.Name) {
+    }
+}
+
+function onEachFeature1(feature, layer) {
+    // does this feature have a property named popupContent?
+    if (feature.properties && feature.properties.Name) {
         layer.bindPopup(feature.properties.Name);
-    }  
+    }
 }	
 	  
 var FourSeasons_MountainBikingTrails = new L.GeoJSON.AJAX("FourSeasons_MountainBikingTrails.geojson",
@@ -87,6 +91,7 @@ DeepRiverTrails.addTo(map);
 
 var OttawaValleyRecreationalTrail = new L.GeoJSON.AJAX("OttawaValleyRecreationalTrail.geojson",
 {
+	onEachFeature: onEachFeature1,
 	color:'blue'
 });   
 OttawaValleyRecreationalTrail.addTo(map);
@@ -94,7 +99,7 @@ OttawaValleyRecreationalTrail.addTo(map);
 	  
 var BikeRoutes_VouageurRoute = new L.GeoJSON.AJAX("BikeRoutes_VouageurRoute.geojson",
 {
-	onEachFeature: onEachFeature,
+	onEachFeature: onEachFeature1,
 	color:'red'
 });
 BikeRoutes_VouageurRoute.addTo(map);
