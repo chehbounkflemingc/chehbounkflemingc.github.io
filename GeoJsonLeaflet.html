@@ -86,7 +86,9 @@ var BikeRoutes_VouageurRoute = new L.GeoJSON.AJAX("BikeRoutes_VouageurRoute.geoj
 {
 	color:'red'
 });
-BikeRoutes_VouageurRoute.addTo(map);
+BikeRoutes_VouageurRoute.addTo(map)    
+.bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
+.openPopup();
 
 		
   </script>
