@@ -84,7 +84,7 @@ DeepRiverTrails.addTo(map);
 var FourSeasons_MountainBikingTrails = new L.GeoJSON.AJAX("FourSeasons_MountainBikingTrails.geojson",
 {
     style: function(feature) {
-        switch (feature.properties.Trail_Name) {
+        switch (feature.properties.Name) {
             case 'B Loop': return {color: "#E60000"};
             case 'D Loop':   return {color: "#FEB8B7"};
 	    case 'M Loop':   return {color: "#E3B3FD"};
