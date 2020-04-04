@@ -56,9 +56,7 @@ var FourSeasons_MountainBikingTrails = new L.GeoJSON.AJAX("FourSeasons_MountainB
 {
 	color:'yellow'
 });       
-FourSeasons_MountainBikingTrails.addTo(map)    
-FourSeasons_MountainBikingTrails.bindPopup('Biking Trails: Four Seasons Mountain')
-FourSeasons_MountainBikingTrails.openPopup();
+FourSeasons_MountainBikingTrails.addTo(map);
 
 var DeepRiverTrails = new L.GeoJSON.AJAX("DeepRiverTrails.geojson",
 {
@@ -73,26 +71,20 @@ var DeepRiverTrails = new L.GeoJSON.AJAX("DeepRiverTrails.geojson",
         }
     }
 });       
-DeepRiverTrails.addTo(map)    
-DeepRiverTrails.bindPopup('DeepRiver Trails')
-DeepRiverTrails.openPopup();
+DeepRiverTrails.addTo(map);
 	  
 var OttawaValleyRecreationalTrail = new L.GeoJSON.AJAX("OttawaValleyRecreationalTrail.geojson",
 {
 	color:'blue'
 });   
-OttawaValleyRecreationalTrail.addTo(map)    
-OttawaValleyRecreationalTrail.bindPopup('Ottawa Valley Recreational Trail')
-OttawaValleyRecreationalTrail.openPopup();
+OttawaValleyRecreationalTrail.addTo(map);
 
 	  
 var BikeRoutes_VouageurRoute = new L.GeoJSON.AJAX("BikeRoutes_VouageurRoute.geojson",
 {
 	color:'red'
 });
-BikeRoutes_VouageurRoute.addTo(map)    
-BikeRoutes_VouageurRoute.bindPopup('Biking Trails: Vouageur Route')
-BikeRoutes_VouageurRoute.openPopup();
+BikeRoutes_VouageurRoute.addTo(map);
 
 		
   </script>
