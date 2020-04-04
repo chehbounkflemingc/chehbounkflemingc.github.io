@@ -59,9 +59,8 @@ DeepRiverTrails.addTo(map);
 	  
 var FourSeasons_MountainBikingTrails = new L.GeoJSON.AJAX("FourSeasons_MountainBikingTrails.geojson");       
 FourSeasons_MountainBikingTrails.addTo(map);
-
 	  
-geojsonLayer.eachLayer(function (layer) {  
+DeepRiverTrails.eachLayer(function (layer) {  
   if(layer.feature.properties.Trail_Name == 'Deep River - Cabin Trail - Base Lake Road') {    
     layer.setStyle({fillColor :'red'}) 
   }
