@@ -72,10 +72,18 @@ var DeepRiverTrails = new L.GeoJSON.AJAX("DeepRiverTrails.geojson",
     }
 });       
 DeepRiverTrails.addTo(map);
-	  
+
+function onEachFeature(feature, layer) {
+    // does this feature have a property named popupContent?
+    if (feature.properties && feature.properties.Status) {
+        layer.bindPopup(feature.properties.Status);
+    }
+}	  
+
 var OttawaValleyRecreationalTrail = new L.GeoJSON.AJAX("OttawaValleyRecreationalTrail.geojson",
 {
 	color:'blue'
+	onEachFeature: onEachFeature
 });   
 OttawaValleyRecreationalTrail.addTo(map);
 
