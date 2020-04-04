@@ -66,9 +66,9 @@ OttawaValleyRecreationalTrail.addTo(map);
 
 var BikeRoutes_VouageurRoute = new L.GeoJSON.AJAX("BikeRoutes_VouageurRoute.geojson");       
 BikeRoutes_VouageurRoute.addTo(map);
-	  
-DeepRiverTrails.eachLayer(function (layer) {  
-  if(layer.features.properties.Trail_Name == 'Deep River - Cabin Trail - Base Lake Road') {    
+	  "Name" : "Ray's Junction"
+BikeRoutes_VouageurRoute.eachLayer(function (layer) {  
+  if(layer.features.properties.Name == "Ray's Junction") {    
     layer.setStyle({fillColor :'red'}) 
   }
 });
