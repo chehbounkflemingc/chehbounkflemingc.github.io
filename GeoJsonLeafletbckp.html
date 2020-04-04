@@ -70,6 +70,14 @@
   opacity: 0.7;
 }
 
+.legend ii {
+  width: 18px;
+  height: 18px;
+  float: left;
+  margin: 10 8px 0 0;
+  opacity: 0.7;
+}
+
 .legend i.icon {
   background-size: 18px;
   background-color: rgba(255, 255, 255, 1);
@@ -161,15 +169,20 @@ var legend = L.control({ position: "topright" });
 legend.onAdd = function(map) {
   var div = L.DomUtil.create("div", "legend");
   div.innerHTML += "<h4>Legend</h4>";
-  div.innerHTML += '<i style="background: #E60000"></i><span>"Biking Trail Chalk River to Deep River"</span><br>';
-  div.innerHTML += '<i style="background: #FEB8B7""></i><span>"Deep River Walking Trail"</span><br>';
-  div.innerHTML += '<i style="background: #E3B3FD"></i><span>"Deep River - Cabin Trail - Base Lake Road"</span><br>';
-  div.innerHTML += '<i style="background: #e327cf"></i><span>"Silver Spoon Trail System"</span><br>';
-  div.innerHTML += '<i style="background: #70A800"></i><span>"Mount Martin Trail"</span><br>';
-  div.innerHTML += '<i style="background: #cc765c"></i><span>"Ottawa River Water Trail"</span><br>';
-  div.innerHTML += '<i class="icon" style="background-image: url(https://d30y9cdsu7xlg0.cloudfront.net/png/194515-200.png);background-repeat: no-repeat;"></i><span>Grænse</span><br>';
-  
+  div.innerHTML += '<i style="background: #E60000"></i><span>Biking Trail Chalk River to Deep River</span><br>';
+  div.innerHTML += '<i style="background: #FEB8B7""></i><span>Deep River Walking Trail</span><br>';
+  div.innerHTML += '<i style="background: #E3B3FD"></i><span>Deep River - Cabin Trail - Base Lake Road</span><br>';
+  div.innerHTML += '<i style="background: #70A800"></i><span>Mount Martin Trail</span><br>';
+  div.innerHTML += '<i style="background: #cc765c"></i><span>Ottawa River Water Trail</span><br>';
+  div.innerHTML += '<i style="background: #e327cf"></i><span>Silver Spoon Trail System</span><br>';
 
+  div.innerHTML += '<ii style="background: #E60000"></i><span>B Loop</span><br>';
+  div.innerHTML += '<ii style="background: #FEB8B7"></i><span>D Loop</span><br>';
+  div.innerHTML += '<ii style="background: #E3B3FD"></i><span>M Loop</span><br>';
+  div.innerHTML += '<ii style="background: #ab72a5"></i><span>S Loop</span><br>';
+  div.innerHTML += '<ii style="background: #70A800"></i><span>H Loop</span><br>';
+  div.innerHTML += '<ii style="background: #cc765c"></i><span>D-M Loop</span><br>';
+  div.innerHTML += '<ii style="background: #5c4f4b"></i><span>Ray"'"s Junction</span><br>';
 	
   return div;
 };
