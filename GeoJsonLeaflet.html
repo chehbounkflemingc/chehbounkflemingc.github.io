@@ -54,8 +54,8 @@
 /* Trails GeoJSON */
 	 
 	  
- var hydro = new L.LayerGroup();
- L.geoJson(DeepRiverTrails, {style: hydrosStyle}).addTo(hydro);
+var geojsonLayer = new L.GeoJSON.AJAX("DeepRiverTrails.geojson");       
+geojsonLayer.addTo(map);
 
 		
   </script>
