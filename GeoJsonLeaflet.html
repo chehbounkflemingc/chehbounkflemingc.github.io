@@ -68,7 +68,7 @@ var BikeRoutes_VouageurRoute = new L.GeoJSON.AJAX("BikeRoutes_VouageurRoute.geoj
 BikeRoutes_VouageurRoute.addTo(map);
 
 BikeRoutes_VouageurRoute.eachLayer(function (layer) {  
-  if(layer.features.properties.Name == "Ray's Junction") {    
+  if(layer.features.properties.Name == 'Bike Vouageur Route') {    
     layer.setStyle({color :'red'}) 
   }
 });
