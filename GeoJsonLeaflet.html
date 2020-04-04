@@ -57,6 +57,13 @@ function onEachFeature(feature, layer) {
         layer.bindPopup(feature.properties.Trail_Name);
     }
 }
+function onEachFeature(feature, layer) {
+    layer.on({
+        mouseover: highlightFeature,
+        mouseout: resetHighlight,
+        click: zoomToFeature
+    });
+}
 
 
 var FourSeasons_MountainBikingTrails = new L.GeoJSON.AJAX("FourSeasons_MountainBikingTrails.geojson",
