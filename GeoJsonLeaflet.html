@@ -60,9 +60,12 @@ FourSeasons_MountainBikingTrails.addTo(map);
 
 var DeepRiverTrails = new L.GeoJSON.AJAX("DeepRiverTrails.geojson",
 {
-	fillOpacity: 0.5,
-	opacity: 0.5,
-	color:'green'
+    style: function(feature) {
+        switch (feature.properties.Trail_Name) {
+            case 'Biking Trail Chalk River to Deep River': return {color: "#ff0000"};
+            case 'Deep River Walking Trail':   return {color: "#0000ff"};
+        }
+    }
 });       
 DeepRiverTrails.addTo(map);
 	  
@@ -70,6 +73,9 @@ var OttawaValleyRecreationalTrail = new L.GeoJSON.AJAX("OttawaValleyRecreational
 {
 	color:'blue'
 });  
+	  
+	  
+
 OttawaValleyRecreationalTrail.addTo(map);
 
 var BikeRoutes_VouageurRoute = new L.GeoJSON.AJAX("BikeRoutes_VouageurRoute.geojson",
