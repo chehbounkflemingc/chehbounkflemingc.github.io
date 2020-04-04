@@ -83,8 +83,18 @@ DeepRiverTrails.addTo(map);
 
 var FourSeasons_MountainBikingTrails = new L.GeoJSON.AJAX("FourSeasons_MountainBikingTrails.geojson",
 {
+    style: function(feature) {
+        switch (feature.properties.Trail_Name) {
+            case 'B Loop': return {color: "#E60000"};
+            case 'D Loop':   return {color: "#FEB8B7"};
+	    case 'M Loop':   return {color: "#E3B3FD"};
+	    case 'S Loop':   return {color: "#ab72a5",opacity: 0.5};
+	    case 'H Loop':   return {color: "#70A800"};
+	    case 'D-M Loop':   return {color: "#cc765c"};
+	    case "Ray's Junction":   return {color: "#5c4f4b"};
+        }
+    },
 	onEachFeature: onEachFeature1,
-	color:'yellow'
 });       
 FourSeasons_MountainBikingTrails.addTo(map);  
 
