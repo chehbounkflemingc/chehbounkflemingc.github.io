@@ -97,6 +97,13 @@ function onEachFeature(feature, layer) {
     }
 }
 
+function onEachFeature1(feature, layer) {
+    // does this feature have a property named popupContent?
+    if (feature.properties && feature.properties.Name) {
+        layer.bindPopup(feature.properties.Name);
+    }
+}
+
 var FourSeasons_MountainBikingTrails = new L.GeoJSON.AJAX("FourSeasons_MountainBikingTrails.geojson",
 {
     style: function(feature) {
@@ -110,6 +117,8 @@ var FourSeasons_MountainBikingTrails = new L.GeoJSON.AJAX("FourSeasons_MountainB
 	    case "Ray's Junction":   return {color: "#5c4f4b"};
         }
     },
+	onEachFeature: onEachFeature1
+
 });       
 FourSeasons_MountainBikingTrails.addTo(map);  
 	  
@@ -139,7 +148,7 @@ OttawaValleyRecreationalTrail.addTo(map);
 	  
 var BikeRoutes_VouageurRoute = new L.GeoJSON.AJAX("BikeRoutes_VouageurRoute.geojson",
 {
-	onEachFeature: onEachFeature,
+	onEachFeature: onEachFeature1,
 	color:'red'
 });
 BikeRoutes_VouageurRoute.addTo(map);
