@@ -67,6 +67,7 @@ function onEachFeature1(feature, layer) {
 	  
 var FourSeasons_MountainBikingTrails = new L.GeoJSON.AJAX("FourSeasons_MountainBikingTrails.geojson",
 {
+	onEachFeature: onEachFeature1,
 	color:'yellow'
 });       
 FourSeasons_MountainBikingTrails.addTo(map);
