@@ -39,7 +39,7 @@
 
 	  /*Setup CSS Legend*/
 
-/*Legend specific*/
+/*Legend specific: https://codepen.io/haakseth/pen/KQbjdO*/ 
 .legend {
   padding: 6px 8px;
   font: 14px Arial, Helvetica, sans-serif;
@@ -104,23 +104,6 @@ function onEachFeature1(feature, layer) {
     }
 }
 
-var FourSeasons_MountainBikingTrails = new L.GeoJSON.AJAX("FourSeasons_MountainBikingTrails.geojson",
-{
-    style: function(feature) {
-        switch (feature.properties.Name) {
-            case 'B Loop': return {color: "#E60000"};
-            case 'D Loop':   return {color: "#FEB8B7"};
-	    case 'M Loop':   return {color: "#E3B3FD"};
-	    case 'S Loop':   return {color: "#ab72a5",opacity: 0.5};
-	    case 'H Loop':   return {color: "#70A800"};
-	    case 'D-M Loop':   return {color: "#cc765c"};
-	    case "Ray's Junction":   return {color: "#5c4f4b"};
-        }
-    },
-	onEachFeature: onEachFeature1
-
-});       
-FourSeasons_MountainBikingTrails.addTo(map);  
 	  
 var DeepRiverTrails = new L.GeoJSON.AJAX("DeepRiverTrails.geojson",
 {
@@ -139,6 +122,25 @@ var DeepRiverTrails = new L.GeoJSON.AJAX("DeepRiverTrails.geojson",
 DeepRiverTrails.addTo(map);
 
 
+var FourSeasons_MountainBikingTrails = new L.GeoJSON.AJAX("FourSeasons_MountainBikingTrails.geojson",
+{
+    style: function(feature) {
+        switch (feature.properties.Name) {
+            case 'B Loop': return {color: "#E60000"};
+            case 'D Loop':   return {color: "#FEB8B7"};
+	    case 'M Loop':   return {color: "#E3B3FD"};
+	    case 'S Loop':   return {color: "#ab72a5"};
+	    case 'H Loop':   return {color: "#70A800"};
+	    case 'D-M Loop':   return {color: "#cc765c"};
+	    case "Ray's Junction":   return {color: "#5c4f4b"};
+        }
+    },
+	onEachFeature: onEachFeature1
+
+});       
+FourSeasons_MountainBikingTrails.addTo(map);  
+
+
 var OttawaValleyRecreationalTrail = new L.GeoJSON.AJAX("OttawaValleyRecreationalTrail.geojson",
 {
 	color:'blue'
@@ -153,7 +155,7 @@ var BikeRoutes_VouageurRoute = new L.GeoJSON.AJAX("BikeRoutes_VouageurRoute.geoj
 });
 BikeRoutes_VouageurRoute.addTo(map);
 
-/*Legend specific*/
+/*Legend specific: https://codepen.io/haakseth/pen/KQbjdO*/
 var legend = L.control({ position: "topright" });
 
 legend.onAdd = function(map) {
