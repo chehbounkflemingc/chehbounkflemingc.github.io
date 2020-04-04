@@ -52,7 +52,10 @@
     L.esri.basemapLayer('Topographic').addTo(map);
 	  
 /* Trails GeoJSON */
-L.geoJson(DeepRiverTrails).addTo(map);
+	 
+	  
+ var hydro = new L.LayerGroup();
+ L.geoJson(DeepRiverTrails, {style: hydrosStyle}).addTo(hydro);
 
 		
   </script>
