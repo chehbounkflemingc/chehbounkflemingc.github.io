@@ -54,9 +54,11 @@
 /* Trails GeoJSON */
 	 
 	  
-var geojsonLayer = new L.GeoJSON.AJAX("DeepRiverTrails.geojson");       
-geojsonLayer.addTo(map);
-
+var DeepRiverTrails = new L.GeoJSON.AJAX("DeepRiverTrails.geojson");       
+DeepRiverTrails.addTo(map);
+	  
+var FourSeasons_MountainBikingTrails = new L.GeoJSON.AJAX("FourSeasons_MountainBikingTrails.geojson");       
+FourSeasons_MountainBikingTrails.addTo(map);
 
 	  
 geojsonLayer.eachLayer(function (layer) {  
