@@ -51,7 +51,12 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 	  
 /* Trails GeoJSON */
  
-
+function onEachFeature(feature, layer) {
+    // does this feature have a property named popupContent?
+    if (feature.properties && feature.properties.Trail_Name) {
+        layer.bindPopup(feature.properties.Trail_Name);
+    }
+}
 
 
 var FourSeasons_MountainBikingTrails = new L.GeoJSON.AJAX("FourSeasons_MountainBikingTrails.geojson",
@@ -82,6 +87,7 @@ var DeepRiverTrails = new L.GeoJSON.AJAX("DeepRiverTrails.geojson",
 	    case 'Ottawa River Water Trail':   return {color: "#cc765c"};
         }
     },
+	onEachFeature: onEachFeature
 });       
 DeepRiverTrails.addTo(map);
 
