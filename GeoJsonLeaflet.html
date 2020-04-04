@@ -55,28 +55,15 @@ function onEachFeature(feature, layer) {
     // does this feature have a property named popupContent?
     if (feature.properties && feature.properties.Trail_Name) {
         layer.bindPopup(feature.properties.Trail_Name);
+    layer.on({
+        mouseover: highlightFeature,
+        mouseout: resetHighlight,
+        click: zoomToFeature
+    });
     },
 }
-function onEachFeatureevent(feature, layer) {
-    layer.on({
-        mouseover: highlightFeature,
-        mouseout: resetHighlight,
-        click: zoomToFeature
-    });
-}
-function onEachFeatureevent1(feature, layer) {
-    // does this feature have a property named popupContent?
-    if (feature.properties && feature.properties.Name) {
-        layer.bindPopup(feature.properties.Name);
-    }
-}
-function onEachFeature1(feature, layer) {
-    layer.on({
-        mouseover: highlightFeature,
-        mouseout: resetHighlight,
-        click: zoomToFeature
-    });
-}
+
+
 
 var FourSeasons_MountainBikingTrails = new L.GeoJSON.AJAX("FourSeasons_MountainBikingTrails.geojson",
 {
@@ -92,7 +79,6 @@ var FourSeasons_MountainBikingTrails = new L.GeoJSON.AJAX("FourSeasons_MountainB
         }
     },
 	onEachFeature: onEachFeature1,
-	onEachFeature: onEachFeatureevent
 });       
 FourSeasons_MountainBikingTrails.addTo(map);  
 	  
@@ -109,7 +95,6 @@ var DeepRiverTrails = new L.GeoJSON.AJAX("DeepRiverTrails.geojson",
         }
     },
 	onEachFeature: onEachFeature,
-	onEachFeature: onEachFeatureevent
 });       
 DeepRiverTrails.addTo(map);
 
@@ -117,7 +102,6 @@ DeepRiverTrails.addTo(map);
 var OttawaValleyRecreationalTrail = new L.GeoJSON.AJAX("OttawaValleyRecreationalTrail.geojson",
 {
 	onEachFeature: onEachFeature1,
-	onEachFeature: onEachFeatureevent
 	color:'blue'
 });   
 OttawaValleyRecreationalTrail.addTo(map);
@@ -126,7 +110,6 @@ OttawaValleyRecreationalTrail.addTo(map);
 var BikeRoutes_VouageurRoute = new L.GeoJSON.AJAX("BikeRoutes_VouageurRoute.geojson",
 {
 	onEachFeature: onEachFeature1,
-	onEachFeature: onEachFeatureevent1
 	color:'red'
 });
 BikeRoutes_VouageurRoute.addTo(map);
