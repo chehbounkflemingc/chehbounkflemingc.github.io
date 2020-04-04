@@ -59,7 +59,7 @@ geojsonLayer.addTo(map);
 
 L.geoJSON(geojsonLayer, {
     style: function(feature) {
-        switch (feature.properties."Trail_Name") {
+        switch (feature.properties.Trail_Name) {
             case "Biking Trail Chalk River to Deep River": return {color: "#ff0000"};
             case "Deep River - Cabin Trail - Base Lake Road":   return {color: "#0000ff"};
         }
