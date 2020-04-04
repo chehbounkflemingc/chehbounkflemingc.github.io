@@ -67,7 +67,6 @@ var FourSeasons_MountainBikingTrails = new L.GeoJSON.AJAX("FourSeasons_MountainB
 	    case "Ray's Junction":   return {color: "#5c4f4b"};
         }
     },
-	onEachFeature: onEachFeature1,
 });       
 FourSeasons_MountainBikingTrails.addTo(map);  
 	  
@@ -83,14 +82,12 @@ var DeepRiverTrails = new L.GeoJSON.AJAX("DeepRiverTrails.geojson",
 	    case 'Ottawa River Water Trail':   return {color: "#cc765c"};
         }
     },
-	onEachFeature: onEachFeature,
 });       
 DeepRiverTrails.addTo(map);
 
 
 var OttawaValleyRecreationalTrail = new L.GeoJSON.AJAX("OttawaValleyRecreationalTrail.geojson",
 {
-	onEachFeature: onEachFeature1,
 	color:'blue'
 });   
 OttawaValleyRecreationalTrail.addTo(map);
@@ -98,7 +95,6 @@ OttawaValleyRecreationalTrail.addTo(map);
 	  
 var BikeRoutes_VouageurRoute = new L.GeoJSON.AJAX("BikeRoutes_VouageurRoute.geojson",
 {
-	onEachFeature: onEachFeature1,
 	color:'red'
 });
 BikeRoutes_VouageurRoute.addTo(map);
