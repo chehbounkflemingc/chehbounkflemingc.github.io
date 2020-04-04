@@ -26,8 +26,8 @@
 <script src="https://raw.githubusercontent.com/calvinmetcalf/leaflet-ajax/master/dist/leaflet.ajax.min.js"></script>
 
  <!-- Load GeoJSON Features fron GEOJSON files -->
-    <!--<script src="FourSeasons_MountainBikingTrails.geojson" type="text/javascript"></script>  -->
-    <!--<script src="DeepRiverTrails.geojson" type="text/javascript"></script> -->
+    <script src="FourSeasons_MountainBikingTrails.geojson" type="text/javascript"></script>
+    <script src="DeepRiverTrails.geojson" type="text/javascript"></script>
 
 	
   <style>
@@ -52,8 +52,7 @@
     L.esri.basemapLayer('Topographic').addTo(map);
 	  
 /* Trails GeoJSON */
-var DeepRiverTrails= new L.GeoJSON.AJAX("https://chehbounkflemingc.github.io/DeepRiverTrails.geojson");
-DeepRiverTrails.addTo(map);	
+L.geoJson(DeepRiverTrails).addTo(map);
 
 		
   </script>
