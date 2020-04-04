@@ -64,12 +64,12 @@ OttawaValleyRecreationalTrail.addTo(map);
 var BikeRoutes_VouageurRoute = new L.GeoJSON.AJAX("BikeRoutes_VouageurRoute.geojson");       
 BikeRoutes_VouageurRoute.addTo(map);
 
-var myStyle = {
-    "color": "#ff7800"
-};
-
 L.geoJSON(BikeRoutes_VouageurRoute, {
-    style: myStyle
+    style: function(feature) {
+        switch (feature.properties.Name) {
+            case 'Bike Vouageur Route': return {color: "#ff0000"};
+        }
+    }
 }).addTo(map);
 
 		
