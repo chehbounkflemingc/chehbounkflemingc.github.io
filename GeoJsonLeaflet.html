@@ -75,7 +75,7 @@ DeepRiverTrails.addTo(map);
 
 function onEachFeature(feature, layer) {
     // does this feature have a property named popupContent?
-    if (feature.properties && feature.properties.Status) {
+    if (feature.properties && feature.properties.Name) {
         layer.bindPopup(feature.properties.Name);
     }
 }	  
