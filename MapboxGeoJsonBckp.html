@@ -27,20 +27,85 @@
 var url = 'https://chehbounkflemingc.github.io/DeepRiverTrails.geojson';
     map.on('load', function() {
         window.setInterval(function() {
-            map.getSource('canada').setData(url);
+            map.getSource('DeepRiverTrails').setData(url);
         }, 2000);
-        map.addSource('canada', { type: 'geojson', data: url });
+        map.addSource('DeepRiverTrails', { type: 'geojson', data: url });
         map.addLayer({
-            'id': 'canada',
-            'type': 'line',
-            'source': 'canada',
-            'layout': {},
-            'paint': {
-'line-color': '#ff0000',
-'line-width': 4
-}
-        });
-    });
+            	'id': 'Biking Trail Chalk River to Deep River',
+            	'type': 'line',
+            	'source': 'DeepRiverTrails',
+            	'layout': {},
+            	'paint': {
+		'line-color': '#ff0000',
+		'line-width': 4
+			},
+    		'filter': ['==', '$id', 1]
+          
+        		});
+   
+	map.addLayer({
+            	'id': 'Deep River Walking Trail',
+            	'type': 'line',
+            	'source': 'DeepRiverTrails',
+            	'layout': {},
+            	'paint': {
+		'line-color': '#00ff00',
+		'line-width': 4
+			},
+    		'filter': ['==', '$id', 2]
+          
+        		});  
+	    map.addLayer({
+            	'id': 'Deep River - Cabin Trail - Base Lake Road',
+            	'type': 'line',
+            	'source': 'DeepRiverTrails',
+            	'layout': {},
+            	'paint': {
+		'line-color': '#b9482e',
+		'line-width': 4
+			},
+    		'filter': ['==', '$id', 3]
+          
+        		});  
+	    map.addLayer({
+            	'id': 'Silver Spoon Trail System',
+            	'type': 'line',
+            	'source': 'DeepRiverTrails',
+            	'layout': {},
+            	'paint': {
+		'line-color': '#8400ff',
+		'line-width': 4
+			},
+    		'filter': ['==', '$id', 4]
+          
+        		});  
+	    map.addLayer({
+            	'id': 'Mount Martin Trail',
+            	'type': 'line',
+            	'source': 'DeepRiverTrails',
+            	'layout': {},
+            	'paint': {
+		'line-color': '#702963',
+		'line-width': 4
+			},
+    		'filter': ['==', '$id', 5]
+          
+        		});  
+	    map.addLayer({
+            	'id': 'Ottawa River Water Trail',
+            	'type': 'line',
+            	'source': 'DeepRiverTrails',
+            	'layout': {},
+            	'paint': {
+		'line-color': '#ebe20a',
+		'line-width': 4
+			},
+    		'filter': ['==', '$id', 6]
+          
+        		});  
+	   });
+	
+	
 </script>
 
 </body>
