@@ -103,39 +103,7 @@ var url = 'https://chehbounkflemingc.github.io/DeepRiverTrails.geojson';
     		'filter': ['==', '$id', 6]
           
         		});  
-	    
-	    
-	    mapboxgl.accessToken = 'pk.eyJ1IjoiY2ttYWlsIiwiYSI6ImNrN2prZGV5ZTBtM2MzZW1xZ2c4amI0MzgifQ.qQwJMwzyKxO_FXRXZcziJQ';
-    var map = new mapboxgl.Map({
-        container: 'map',
-        style: 'mapbox://styles/mapbox/streets-v11',
-        center: [-77.45, 46.080],
-        zoom: 10
-    });
-var url = 'https://chehbounkflemingc.github.io/DeepRiverTrails.geojson';
-    map.on('load', function() {
-        window.setInterval(function() {
-            map.getSource('DeepRiverTrails').setData(url);
-        }, 2000);
-        map.addSource('DeepRiverTrails', { type: 'geojson', data: url });
-        map.addLayer({
-            'id': 'Trail',
-            'type': 'line',
-            'source': 'DeepRiverTrails',
-            'layout': {},
-            'paint': {
-'line-color': '#ff0000',
-'line-width': 4
-},
-    'filter': ['==', '$id', 1]
-          
-        });
-    });
-	
-
-	
-	
-	
+	   });
 	
 	
 </script>
