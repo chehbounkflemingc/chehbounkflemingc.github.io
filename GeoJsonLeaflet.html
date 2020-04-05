@@ -144,11 +144,6 @@ var FourSeasons_MountainBikingTrails = new L.GeoJSON.AJAX("FourSeasons_MountainB
 });       
 FourSeasons_MountainBikingTrails.addTo(map);  
 
-var magnifyingGlass = L.magnifyingGlass({
-  layers: [FourSeasons_MountainBikingTrails],
-  fixedZoom: 5,
-  radius: 150
-}).addTo(map);
 
 var OttawaValleyRecreationalTrail = new L.GeoJSON.AJAX("OttawaValleyRecreationalTrail.geojson",
 {
