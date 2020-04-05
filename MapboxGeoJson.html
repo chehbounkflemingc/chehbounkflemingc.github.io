@@ -31,18 +31,35 @@ var url = 'https://chehbounkflemingc.github.io/DeepRiverTrails.geojson';
         }, 2000);
         map.addSource('DeepRiverTrails', { type: 'geojson', data: url });
         map.addLayer({
-            'id': '1',
-            'type': 'line',
-            'source': 'DeepRiverTrails',
-            'layout': {},
-            'paint': {
-'line-color': '#ff0000',
-'line-width': 4
-},
-    'filter': ['==', '$id', 1]
+            	'id': '1',
+            	'type': 'line',
+            	'source': 'DeepRiverTrails',
+            	'layout': {},
+            	'paint': {
+		'line-color': '#ff0000',
+		'line-width': 4
+			},
+    		'filter': ['==', '$id', 1]
           
-        });
+        		});
+   
+	map.addLayer({
+            	'id': '2',
+            	'type': 'line',
+            	'source': 'DeepRiverTrails',
+            	'layout': {},
+            	'paint': {
+		'line-color': '#00ff00',
+		'line-width': 4
+			},
+    		'filter': ['==', '$id', 1]
+          
+        		});  
+	 
     });
+	
+	
+	
 </script>
 
 </body>
