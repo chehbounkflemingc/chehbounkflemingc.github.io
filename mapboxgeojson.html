@@ -25,20 +25,10 @@
         center: [46.08,-77.45]
     });
     // Modify this to place your own map service URL here. Show one or more provinces--do not just show Ontario like this example. 
-    var url = 'https://chehbounkflemingc.github.io/DeepRiverTrails.geojson';
-    map.on('load', function() {
-        window.setInterval(function() {
-            map.getSource('canada').setData(url);
-        }, 2000);
-        map.addSource('canada', { type: 'geojson', data: url });
-        map.addLayer({
-            'id': 'canada',
-            'type': 'fill',
-            'source': 'canada',
-            'layout': {},
-            'paint': {'fill-color': '#088','fill-opacity': 0.8}
-        });
-    });
+	map.addSource('some id', {
+    	type: 'geojson',
+    	data: 'https://chehbounkflemingc.github.io/DeepRiverTrails.geojson'
+	});
 </script>
 
 </body>
