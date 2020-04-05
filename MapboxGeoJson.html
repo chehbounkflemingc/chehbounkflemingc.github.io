@@ -27,18 +27,20 @@
 var url = 'https://chehbounkflemingc.github.io/DeepRiverTrails.geojson';
     map.on('load', function() {
         window.setInterval(function() {
-            map.getSource('canada').setData(url);
+            map.getSource('DeepRiverTrails').setData(url);
         }, 2000);
-        map.addSource('canada', { type: 'geojson', data: url });
+        map.addSource('DeepRiverTrails', { type: 'geojson', data: url });
         map.addLayer({
-            'id': 'canada',
+            'id': '1',
             'type': 'line',
-            'source': 'canada',
+            'source': 'DeepRiverTrails',
             'layout': {},
             'paint': {
 'line-color': '#ff0000',
 'line-width': 4
-}
+},
+    'filter': ['==', '$id', 1]
+          
         });
     });
 </script>
