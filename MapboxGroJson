@@ -17,15 +17,14 @@
 <script>
 	// Modified from: https://docs.mapbox.com/mapbox-gl-js/example/live-geojson/
 	// Make sure you use your own Access Token
-	mapboxgl.accessToken = 'pk.eyJ1IjoiY2ttYWlsIiwiYSI6ImNrN2prZGV5ZTBtM2MzZW1xZ2c4amI0MzgifQ.qQwJMwzyKxO_FXRXZcziJQ';
+		mapboxgl.accessToken = 'pk.eyJ1IjoiY2ttYWlsIiwiYSI6ImNrN2prZGV5ZTBtM2MzZW1xZ2c4amI0MzgifQ.qQwJMwzyKxO_FXRXZcziJQ';
     var map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/mapbox/streets-v11',
-        zoom: 3,
-        center: [-100.0, 50.0]
+        center: [-77.45, 46.080],
+        zoom: 10
     });
-    // Modify this to place your own map service URL here. Show one or more provinces--do not just show Ontario like this example. 
-    var url = 'https://chibramsme.duckdns.org/arcgis/rest/services/kchehbou/kchehbouCanadaPro/MapServer/0/query?where=PRNAME%3D%27Manitoba%27&returnGeometry=true&returnTrueCurves=false&returnExtentOnly=false&f=geojson';
+var url = 'https://chehbounkflemingc.github.io/DeepRiverTrails.geojson';
     map.on('load', function() {
         window.setInterval(function() {
             map.getSource('canada').setData(url);
@@ -33,10 +32,13 @@
         map.addSource('canada', { type: 'geojson', data: url });
         map.addLayer({
             'id': 'canada',
-            'type': 'fill',
+            'type': 'line',
             'source': 'canada',
             'layout': {},
-            'paint': {'fill-color': '#088','fill-opacity': 0.8}
+            'paint': {
+'line-color': '#ff0000',
+'line-width': 4
+}
         });
     });
 </script>
