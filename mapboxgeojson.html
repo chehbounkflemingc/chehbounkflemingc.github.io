@@ -21,11 +21,11 @@
     var map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/mapbox/streets-v11',
-        zoom: 3,
-        center: [-100.0, 50.0]
+        zoom: 12,
+        center: [46.08,-77.45]
     });
     // Modify this to place your own map service URL here. Show one or more provinces--do not just show Ontario like this example. 
-    var url = 'https://chibramsme.duckdns.org/arcgis/rest/services/kchehbou/kchehbouCanadaPro/MapServer/0/query?where=PRNAME%3D%27Manitoba%27&returnGeometry=true&returnTrueCurves=false&returnExtentOnly=false&f=geojson';
+    var url = 'https://chehbounkflemingc.github.io/DeepRiverTrails.geojson';
     map.on('load', function() {
         window.setInterval(function() {
             map.getSource('canada').setData(url);
