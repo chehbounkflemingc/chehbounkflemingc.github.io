@@ -25,7 +25,7 @@ var map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/mapbox/streets-v11',
         center: [-77.45, 46.080],
-        zoom: 14
+        zoom: 
     });
 
 mapboxgl.accessToken = 'pk.eyJ1IjoiY2ttYWlsIiwiYSI6ImNrN2prZGV5ZTBtM2MzZW1xZ2c4amI0MzgifQ.qQwJMwzyKxO_FXRXZcziJQ';
@@ -488,7 +488,7 @@ map.on('mouseleave', 'Ottawa Valley Recreational Trail', function() {
 map.getCanvas().style.cursor = '';
 });
       });
-
+L.mapbox.legendControl({ position: 'topright' }).addLegend('<strong>The Corporation of Town of Deep River Municipal Trail Mapping  </strong>').addTo(map);
 
 </script>
 
