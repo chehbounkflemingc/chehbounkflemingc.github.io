@@ -28,13 +28,6 @@ var map = new mapboxgl.Map({
         zoom: 10
     });
 
-function onEachFeature(feature, layer) {
-    // does this feature have a property named popupContent?
-    if (feature.properties && feature.properties.Trail_Name) {
-        layer.bindPopup(feature.properties.Trail_Name);
-    }
-}
-
 var url = 'https://chehbounkflemingc.github.io/DeepRiverTrails.geojson';
     map.on('load', function() {
         window.setInterval(function() {
@@ -120,10 +113,9 @@ map.addLayer({
 // location of the feature, with description HTML from its properties.
 map.on('click', 'Deep River - Cabin Trail - Base Lake Road', function(e) {
   
-var hey = e.features[0].properties.Trail_Name;
-   
 new mapboxgl.Popup()
-.setHTML(hey)
+.setLngLat(e.lngLat)
+.setHTML(e.features[0].properties.Trail_Name)
 .addTo(map);
 }); 
       
@@ -140,7 +132,6 @@ map.getCanvas().style.cursor = '';
       
  
 });
-	
 	
 </script>
 
