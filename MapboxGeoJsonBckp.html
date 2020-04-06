@@ -25,13 +25,10 @@ var map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/mapbox/streets-v11',
         center: [-77.45, 46.080],
-        zoom: 12
+        zoom: 10
     });
 
 mapboxgl.accessToken = 'pk.eyJ1IjoiY2ttYWlsIiwiYSI6ImNrN2prZGV5ZTBtM2MzZW1xZ2c4amI0MzgifQ.qQwJMwzyKxO_FXRXZcziJQ';
-
-
-
 
 var url1 = 'https://chehbounkflemingc.github.io/DeepRiverTrails.geojson';
     map.on('load', function() {
@@ -159,7 +156,6 @@ new mapboxgl.Popup()
      	    
         
  // Change the cursor to a pointer when the mouse is over the places layer.
-      
 map.on('mouseenter', 'Deep River - Cabin Trail - Base Lake Road', function() {
 map.getCanvas().style.cursor = 'pointer';
 });
@@ -199,14 +195,6 @@ map.on('mouseleave', 'Ottawa River Water Trail', function() {
 map.getCanvas().style.cursor = '';
 });	    
 });
-
-
-
-
-
-
-
-
 
 var url2 = 'https://chehbounkflemingc.github.io/FourSeasons_MountainBikingTrails.geojson';
     map.on('load', function() {
@@ -483,7 +471,7 @@ map.on('mouseleave', 'Ottawa Valley Recreational Trail', function() {
 map.getCanvas().style.cursor = '';
 });
       });
-L.mapbox.legendControl({ position: 'topright' }).addLegend('<strong>The Corporation of Town of Deep River Municipal Trail Mapping  </strong>').addTo(map);
+L.mapbox.legendControl({ position: 'topright' }).addLegend('<strong>The Corporation of Town of Deep River Municipal Trail Mapping </strong>').addTo(map);
 
 </script>
 
