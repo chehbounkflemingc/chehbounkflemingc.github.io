@@ -20,19 +20,29 @@
 	// Modified from: https://docs.mapbox.com/mapbox-gl-js/example/live-geojson/
 	// Make sure you use your own Access Token
 		mapboxgl.accessToken = 'pk.eyJ1IjoiY2ttYWlsIiwiYSI6ImNrN2prZGV5ZTBtM2MzZW1xZ2c4amI0MzgifQ.qQwJMwzyKxO_FXRXZcziJQ';
-    var map = new mapboxgl.Map({
+
+var map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/mapbox/streets-v11',
         center: [-77.45, 46.080],
         zoom: 10
     });
+
+function onEachFeature(feature, layer) {
+    // does this feature have a property named popupContent?
+    if (feature.properties && feature.properties.Trail_Name) {
+        layer.bindPopup(feature.properties.Trail_Name);
+    }
+}
+
 var url = 'https://chehbounkflemingc.github.io/DeepRiverTrails.geojson';
     map.on('load', function() {
         window.setInterval(function() {
             map.getSource('DeepRiverTrails').setData(url);
         }, 2000);
         map.addSource('DeepRiverTrails', { type: 'geojson', data: url });
-        map.addLayer({
+      
+map.addLayer({
             	'id': 'Biking Trail Chalk River to Deep River',
             	'type': 'line',
             	'source': 'DeepRiverTrails',
@@ -102,62 +112,34 @@ var url = 'https://chehbounkflemingc.github.io/DeepRiverTrails.geojson';
 		'line-color': '#ebe20a',
 		'line-width': 4
 			},
-    		'filter': ['==', '$id', 6]      
+    		'filter': ['==', '$id', 6]
           
         		});  
       
-      
-      map.addSource('DeepRiverTrails', {
-    type: 'geojson',
-    data: 'https://chehbounkflemingc.github.io/DeepRiverTrails.geojson'
-});
-
-    
-// Add a layer showing the places.
-map.addLayer({
-'id': 'DeepRiverTrails',
-'type': 'symbol',
-'source': 'DeepRiverTrails',
-'layout': {
-'icon-image': '{icon}-15',
-'icon-allow-overlap': true
-}
-});
-// When a click event occurs on a feature in the places layer, open a popup at the
+   // Whn a click event occurs on a feature in the places layer, open a popup at the
 // location of the feature, with description HTML from its properties.
-map.on('click', 'DeepRiverTrails', function(e) {
-var coordinates = e.features[0].geometry.coordinates.slice();
-var Trail = e.features[0].properties.Trail_Name;
- 
-// Ensure that if the map is zoomed out such that multiple
-// copies of the feature are visible, the popup appears
-// over the copy being pointed to.
-while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
-coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
-}
- 
+map.on('click', 'Deep River - Cabin Trail - Base Lake Road', function(e) {
+  
+var hey = e.features[0].properties.Trail_Name;
+   
 new mapboxgl.Popup()
-.setLngLat(coordinates)
-.setHTML(Trail)
+.setHTML(hey)
 .addTo(map);
-});
-
-// Change the cursor to a pointer when the mouse is over the places layer.
-map.on('mouseenter', 'DeepRiverTrails', function() {
+}); 
+      
+ // Change the cursor to a pointer when the mouse is over the places layer.
+map.on('mouseenter', 'Deep River - Cabin Trail - Base Lake Road', function() {
 map.getCanvas().style.cursor = 'pointer';
 });
- 
+
 // Change it back to a pointer when it leaves.
-map.on('mouseleave', 'DeepRiverTrails', function() {
+map.on('mouseleave', 'Deep River - Cabin Trail - Base Lake Road', function() {
 map.getCanvas().style.cursor = '';
 });
-
+  
       
-      
-      
-      
-      
-	   });
+ 
+});
 	
 	
 </script>
