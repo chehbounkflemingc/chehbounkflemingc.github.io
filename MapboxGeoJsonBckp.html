@@ -36,7 +36,7 @@ var url = 'https://chehbounkflemingc.github.io/DeepRiverTrails.geojson';
         map.addSource('DeepRiverTrails', { type: 'geojson', data: url });
       
 map.addLayer({
-            	'id': 'Biking Trail Chalk River to Deep River',
+            	'id': 'Deep River - Cabin Trail - Base Lake Road',
             	'type': 'line',
             	'source': 'DeepRiverTrails',
             	'layout': {},
@@ -47,32 +47,7 @@ map.addLayer({
     		'filter': ['==', '$id', 1]
           
         		});
-   
-	map.addLayer({
-            	'id': 'Deep River Walking Trail',
-            	'type': 'line',
-            	'source': 'DeepRiverTrails',
-            	'layout': {},
-            	'paint': {
-		'line-color': '#00ff00',
-		'line-width': 4
-			},
-    		'filter': ['==', '$id', 2]
-          
-        		});  
-	    map.addLayer({
-            	'id': 'Deep River - Cabin Trail - Base Lake Road',
-            	'type': 'line',
-            	'source': 'DeepRiverTrails',
-            	'layout': {},
-            	'paint': {
-		'line-color': '#b9482e',
-		'line-width': 4
-			},
-    		'filter': ['==', '$id', 3]
-          
-        		});  
-	    map.addLayer({
+   map.addLayer({
             	'id': 'Silver Spoon Trail System',
             	'type': 'line',
             	'source': 'DeepRiverTrails',
@@ -81,33 +56,8 @@ map.addLayer({
 		'line-color': '#8400ff',
 		'line-width': 4
 			},
-    		'filter': ['==', '$id', 4]
-          
-        		});  
-	    map.addLayer({
-            	'id': 'Mount Martin Trail',
-            	'type': 'line',
-            	'source': 'DeepRiverTrails',
-            	'layout': {},
-            	'paint': {
-		'line-color': '#702963',
-		'line-width': 4
-			},
-    		'filter': ['==', '$id', 5]
-          
-        		});  
-	    map.addLayer({
-            	'id': 'Ottawa River Water Trail',
-            	'type': 'line',
-            	'source': 'DeepRiverTrails',
-            	'layout': {},
-            	'paint': {
-		'line-color': '#ebe20a',
-		'line-width': 4
-			},
-    		'filter': ['==', '$id', 6]
-          
-        		});  
+    		'filter': ['==', '$id', 2]
+             		});
       
    // Whn a click event occurs on a feature in the places layer, open a popup at the
 // location of the feature, with description HTML from its properties.
@@ -118,9 +68,22 @@ new mapboxgl.Popup()
 .setHTML(e.features[0].properties.Trail_Name)
 .addTo(map);
 }); 
+
+map.on('click', 'Silver Spoon Trail System', function(e) {
+  
+new mapboxgl.Popup()
+.setLngLat(e.lngLat)
+.setHTML(e.features[0].properties.Trail_Name)
+.addTo(map);
+}); 
       
  // Change the cursor to a pointer when the mouse is over the places layer.
+      
 map.on('mouseenter', 'Deep River - Cabin Trail - Base Lake Road', function() {
+map.getCanvas().style.cursor = 'pointer';
+});
+      
+map.on('mouseenter', 'Silver Spoon Trail System', function() {
 map.getCanvas().style.cursor = 'pointer';
 });
 
@@ -128,9 +91,9 @@ map.getCanvas().style.cursor = 'pointer';
 map.on('mouseleave', 'Deep River - Cabin Trail - Base Lake Road', function() {
 map.getCanvas().style.cursor = '';
 });
-  
-      
- 
+map.on('mouseleave', 'Silver Spoon Trail System', function() {
+map.getCanvas().style.cursor = '';
+});
 });
 	
 </script>
