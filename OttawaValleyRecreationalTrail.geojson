@@ -859,6 +859,7 @@
       },
       "properties" : {
         "OBJECTID_1" : 1,
+        "Name" : "Ottawa Valley Recreational Trail"
         "Length_kms" : 21.373084758004506,
         "Structures_Present" : "Closed",
         "Status" : "Closed",
