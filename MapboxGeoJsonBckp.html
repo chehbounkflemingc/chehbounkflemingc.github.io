@@ -405,7 +405,7 @@ map.addLayer({
             	'source': 'BikeRoutes_VouageurRoute',
             	'layout': {},
             	'paint': {
-		'line-color': '#0000ff',
+		'line-color': '#c62535',
 		'line-width': 4
 			},
     		
@@ -466,14 +466,11 @@ map.addLayer({
 		'line-color': '#1567d8',
 		'line-width': 4
 			},
-    		
-          
+    		      
         		});
-	    
 // Whn a click event occurs on a feature in each layer, open a popup at the
 // location of the feature, with description HTML from its properties.
-
- map.on('click', 'Ottawa Valley Recreational Trail', function(e) {
+map.on('click', 'Ottawa Valley Recreational Trail', function(e) {
 new mapboxgl.Popup()
 .setLngLat(e.lngLat)
 .setHTML(e.features[0].properties.Name)
