@@ -141,7 +141,7 @@ var DeepRiverTrails = new L.GeoJSON.AJAX("DeepRiverTrails.geojson",
 	    case 'Ottawa River Water Trail':   return {color: "#cc765c"};
         }
     },
-	onEachFeature: onEachFeature: function (feature, layer) {
+	onEachFeature: function (feature, layer) {
             layer.on({
                 click: function showResultsInDiv() {
                     var d= document.getElementById('tab4');
