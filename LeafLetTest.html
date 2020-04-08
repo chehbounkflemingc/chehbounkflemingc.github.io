@@ -141,7 +141,44 @@ var DeepRiverTrails = new L.GeoJSON.AJAX("DeepRiverTrails.geojson",
 	    case 'Ottawa River Water Trail':   return {color: "#cc765c"};
         }
     },
-	onEachFeature: onEachFeature
+	onEachFeature: onEachFeature: function (feature, layer) {
+            layer.on({
+                click: function showResultsInDiv() {
+                    var d= document.getElementById('tab4');
+                    d.innerHTML =  "<table>"
+                                      "<tbody>"
+                                        "<tr>"
+                                          "<th scope="row"><h3>" + feature.properties.Trail_name + "</h3></th>"
+                                        "</tr>"
+                                        "<tr>"
+                                          "<th scope="row">" "</th>"
+                                        "</tr>"
+                                        "<tr>"
+                                          "<th scope="row">Total Length KMS</th>"
+                                          "<td>" + feature.properties.Length_KMS + "</td>"
+                                        "</tr>"
+                                        "<tr>"
+                                          "<th scope="row">Association Name</th>"
+                                          "<td>" + feature.properties.Association + "</td>"
+                                        "</tr>"
+                                           "<tr>"
+                                          "<th scope="row">Trail Type</th>"
+                                          "<td>" + feature.properties.Grouping+ "</td>"
+                                        "</tr>"
+
+                                        "<tr>"
+                                          "<th scope="row">Degree of Difficulty</th>"
+                                          "<td>" + feature.properties.DegreeOfDifficulty + "</td>"
+                                        "</tr>"
+                                        "<tr>"
+                                          "<th scope="row">Source</th>"
+                                          "<td>" + feature.properties.Source+ "</td>"
+                                        "</tr>"
+                                       "</tbody>"
+                                    "</table>";
+                }
+            }); }
+    }).addTo(map);
 });       
 DeepRiverTrails.addTo(map);
 
