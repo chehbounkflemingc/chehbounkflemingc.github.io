@@ -201,7 +201,7 @@ legend.addTo(map);
 		layer: DeepRiverTrails,
 		buildTip: function(text, val) {
 			var name = val.layer.feature.properties.Trail_Name;
-			return '<a href="#" class="'+name;
+			return name;
 		}
 	})
 	.addTo(map);
