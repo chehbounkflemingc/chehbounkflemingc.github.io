@@ -100,7 +100,7 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 function onEachFeature(feature, layer) {
     // does this feature have a property named popupContent?
     if (feature.properties && feature.properties.Trail_Name) {
-        layer.bindPopup(feature.properties.Trail_Name + "<br>"+feature.properties.Length_KMS);
+        layer.bindPopup("Trail Name: " +feature.properties.Trail_Name + "<br>Total Length: "+feature.properties.Length_KMS +"KMS"+ "<br>Association Name: "+ feature.properties.Association + "<br>Trail Type: "+ feature.properties.Grouping+ "<br>Degree Of Difficulty (1 - 5 Scale): "+ feature.properties.DegreeOfDifficulty );
     }
 }
 
