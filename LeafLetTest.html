@@ -100,44 +100,7 @@ function onEachFeature(feature, layer) {
     // does this feature have a property named popupContent?
     if (feature.properties && feature.properties.Trail_Name) {
         layer.bindPopup(feature.properties.Trail_Name);
-    };
-	layer.on({
-                click: function showResultsInDiv() {
-                    var d= document.getElementById('tab4');
-                    d.innerHTML =  "<table>"
-                                      "<tbody>"
-                                        "<tr>"
-                                          "<th scope="row"><h3>" + feature.properties.Trail_name + "</h3></th>"
-                                        "</tr>"
-                                        "<tr>"
-                                          "<th scope="row">" "</th>"
-                                        "</tr>"
-                                        "<tr>"
-                                          "<th scope="row">Total Length KMS</th>"
-                                          "<td>" + feature.properties.Length_KMS + "</td>"
-                                        "</tr>"
-                                        "<tr>"
-                                          "<th scope="row">Association Name</th>"
-                                          "<td>" + feature.properties.Association + "</td>"
-                                        "</tr>"
-                                           "<tr>"
-                                          "<th scope="row">Trail Type</th>"
-                                          "<td>" + feature.properties.Grouping+ "</td>"
-                                        "</tr>"
-
-                                        "<tr>"
-                                          "<th scope="row">Degree of Difficulty</th>"
-                                          "<td>" + feature.properties.DegreeOfDifficulty + "</td>"
-                                        "</tr>"
-                                        "<tr>"
-                                          "<th scope="row">Source</th>"
-                                          "<td>" + feature.properties.Source+ "</td>"
-                                        "</tr>"
-                                       "</tbody>"
-                                    "</table>";
-                }
-            }); 
-   
+    }
 }
 
 function onEachFeature1(feature, layer) {
@@ -146,7 +109,6 @@ function onEachFeature1(feature, layer) {
         layer.bindPopup(feature.properties.Name);
     }
 } 
-
 
 var FourSeasons_MountainBikingTrails = new L.GeoJSON.AJAX("FourSeasons_MountainBikingTrails.geojson",
 {
@@ -178,7 +140,42 @@ var DeepRiverTrails = new L.GeoJSON.AJAX("DeepRiverTrails.geojson",
 	    case 'Ottawa River Water Trail':   return {color: "#cc765c"};
         }
     },
-	onEachFeature: onEachFeature
+	onEachFeature: : function (feature, layer) {
+            layer.on({
+                click: function showResultsInDiv() {
+                    var d= document.getElementById('tab4');
+                    d.innerHTML =  "<table>"
+                                      "<tbody>"
+                                        "<tr>"
+                                          "<th scope="row"><h3>" + feature.properties.name + "</h3></th>"
+                                        "</tr>"
+                                        "<tr>"
+                                          "<th scope="row">" "</th>"
+                                        "</tr>"
+                                        "<tr>"
+                                          "<th scope="row">ID</th>"
+                                          "<td>" + feature.properties.id + "</td>"
+                                        "</tr>"
+                                        "<tr>"
+                                          "<th scope="row">X</th>"
+                                          "<td>" + feature.properties.x + "</td>"
+                                        "</tr>"
+                                        "<tr>"
+                                          "<th scope="row">Y</th>"
+                                          "<td>" + feature.properties.y + "</td>"
+                                        "</tr>"
+                                        "<tr>"
+                                          "<th scope="row">Keten</th>"
+                                          "<td>" + feature.properties.keten + "</td>"
+                                        "</tr>"
+                                        "<tr>"
+                                          "<th scope="row">Naam</th>"
+                                          "<td>" + feature.properties.name + "</td>"
+                                        "</tr>"
+                                      "</tbody>"
+                                    "</table>";
+                }
+            });
 });       
 DeepRiverTrails.addTo(map);
 
