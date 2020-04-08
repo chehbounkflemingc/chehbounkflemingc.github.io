@@ -197,12 +197,12 @@ legend.onAdd = function(map) {
 legend.addTo(map);
 	  
 /* Adding scale bar*/
-L.control.scale().addTo(map);	
-
 	L.control.search({
 		layer: DeepRiverTrails,
-		feature.properties.Trail_Name: 'trail_name',
-
+		buildTip: function(text, val) {
+			var name = val.layer.feature.properties.Trail_Name;
+			return '<a href="#" class="'+name;
+		}
 	})
 	.addTo(map);
 
