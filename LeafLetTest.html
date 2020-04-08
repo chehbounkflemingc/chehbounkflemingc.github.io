@@ -100,24 +100,14 @@ function onEachFeature(feature, layer) {
     // does this feature have a property named popupContent?
     if (feature.properties && feature.properties.Trail_Name) {
         layer.bindPopup(feature.properties.Trail_Name);
-    };
-	layer.on({
-            mouseover: highlightFeature,
-            mouseout: resetHighlight,
-            click: zoomToFeature
-        });
+    }
 }
 
 function onEachFeature1(feature, layer) {
     // does this feature have a property named popupContent?
     if (feature.properties && feature.properties.Name) {
         layer.bindPopup(feature.properties.Name);
-    };
-	layer.on({
-            mouseover: highlightFeature,
-            mouseout: resetHighlight,
-            click: zoomToFeature
-        });
+    }
 } 
 
 
