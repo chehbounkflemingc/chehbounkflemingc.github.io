@@ -95,13 +95,30 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 }).addTo(map);
 	  
 /* Trails GeoJSON */
+
  
 function onEachFeature(feature, layer) {
     // does this feature have a property named popupContent?
     if (feature.properties && feature.properties.Trail_Name) {
-        layer.bindPopup(feature.properties.Trail_Name);
+        layer.bindPopup(feature.properties.Trail_Name + feature.properties.Trail_Name);
     }
 }
+    function resetHighlight(e) {
+        polska.resetStyle(e.target);
+        info.update();
+    }
+
+    function zoomToFeature(e) {
+        map.fitBounds(e.target.getBounds());
+    }
+
+    function onEachFeature(feature, layer) {
+        layer.on({
+            mouseover: highlightFeature,
+            mouseout: resetHighlight,
+            click: zoomToFeature
+        });
+    }
 
 function onEachFeature1(feature, layer) {
     // does this feature have a property named popupContent?
