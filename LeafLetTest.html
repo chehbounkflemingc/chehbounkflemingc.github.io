@@ -112,25 +112,10 @@ function onEachFeature(feature, layer) {
                                           "<th scope="row">Total Length KMS</th>"
                                           "<td>" + feature.properties.Length_KMS + "</td>"
                                         "</tr>"
-                                        "<tr>"
-                                          "<th scope="row">Association Name</th>"
-                                          "<td>" + feature.properties.Association + "</td>"
-                                        "</tr>"
-                                           "<tr>"
-                                          "<th scope="row">Trail Type</th>"
-                                          "<td>" + feature.properties.Grouping+ "</td>"
-                                        "</tr>"
-
-                                        "<tr>"
-                                          "<th scope="row">Degree of Difficulty</th>"
-                                          "<td>" + feature.properties.DegreeOfDifficulty + "</td>"
-                                        "</tr>"
-                                        "<tr>"
-                                          "<th scope="row">Source</th>"
-                                          "<td>" + feature.properties.Source+ "</td>"
-                                        "</tr>"
-                                       "</tbody>"
+                                        "</tbody>"
                                     "</table>";
+			d.innerHTML =  "<h3>" + feature.properties.Trail_name + "</h3> ID:" + feature.properties.Length_KMS + "<br>;
+                        $('.nav-tabs a[href="#tab4"]').tab('show');
 
                 }
             });
