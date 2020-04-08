@@ -151,15 +151,7 @@ DeepRiverTrails.addTo(map);
 	  
 	  
 
-	var controlSearch = new L.Control.Search({
-		position:'topleft',		
-		layer: DeepRiverTrails,
-		initial: false,
-		zoom: 12,
-		marker: false
-	});
-
-	map.addControl( controlSearch );	  
+	  
 	  
 
 
@@ -203,7 +195,17 @@ legend.onAdd = function(map) {
 legend.addTo(map);
 	  
 /* Adding scale bar*/
-L.control.scale().addTo(map);		
+L.control.scale().addTo(map);	
+
+	var controlSearch = new L.Control.Search({
+		position:'topleft',		
+		layer: DeepRiverTrails,
+		initial: false,
+		zoom: 12,
+		marker: false
+	});
+
+	map.addControl( controlSearch );
 
 </script>
 </body>
