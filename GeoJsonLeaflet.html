@@ -199,15 +199,13 @@ legend.addTo(map);
 /* Adding scale bar*/
 L.control.scale().addTo(map);	
 
-	var controlSearch = new L.Control.Search({
-		position:'topleft',		
+	L.control.search({
 		layer: DeepRiverTrails,
 		initial: false,
-		zoom: 12,
-		marker: false
-	});
+		propertyName: 'trail_name',
 
-	map.addControl( controlSearch );
+	})
+	.addTo(map);
 
 </script>
 </body>
