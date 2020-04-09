@@ -114,7 +114,7 @@ function onEachFeature(feature, layer) {
 function onEachFeature1(feature, layer) {
     // does this feature have a property named popupContent?
     if (feature.properties && feature.properties.Name) {
-        layer.bindPopup("<strong>Trail Name: </strong>" +feature.properties.Name + "<br><strong>Area:</strong> "+feature.properties.Area);
+        layer.bindPopup("<strong>Trail Name: </strong>" +feature.properties.Name + "<br><strong>Area:</strong> "+feature.properties.area);
     }
 } 
 
