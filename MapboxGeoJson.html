@@ -145,14 +145,14 @@ new mapboxgl.Popup()
 map.on('click', 'Biking Trail Chalk River to Deep River', function(e) {
 new mapboxgl.Popup()
 .setLngLat(e.lngLat)
-.setHTML("<strong>Trail Name: </strong>" +e.features[0].properties.Trail_Name + "<br><strong>Total Length:</strong> "+e.features[0].properties.Length_KMS +" KMS"+ "<br><strong>Association Name:</strong> "+ e.features[0].properties.Association + "<br><strong>Trail Type:</strong> "+ feature.properties.Grouping+ "<br><strong>Degree Of Difficulty (1 - 5 Scale):</strong> "+ e.features[0].properties.DegreeOfDifficulty)
+.setHTML("<strong>Trail Name: </strong>" +e.features[0].properties.Trail_Name + "<br><strong>Total Length:</strong> "+e.features[0].properties.Length_KMS +" KMS"+ "<br><strong>Association Name:</strong> "+ e.features[0].properties.Association + "<br><strong>Trail Type:</strong> "+ e.features[0].properties.Grouping+ "<br><strong>Degree Of Difficulty (1 - 5 Scale):</strong> "+ e.features[0].properties.DegreeOfDifficulty)
 .addTo(map);
 }); 
 
 map.on('click', 'Ottawa River Water Trail', function(e) {
 new mapboxgl.Popup()
 .setLngLat(e.lngLat)
-.setHTML("<strong>Trail Name: </strong>" +e.features[0].properties.Trail_Name + "<br><strong>Total Length:</strong> "+e.features[0].properties.Length_KMS +" KMS"+ "<br><strong>Association Name:</strong> "+ e.features[0].properties.Association + "<br><strong>Trail Type:</strong> "+ feature.properties.Grouping+ "<br><strong>Degree Of Difficulty (1 - 5 Scale):</strong> "+ e.features[0].properties.DegreeOfDifficulty)
+.setHTML("<strong>Trail Name: </strong>" +e.features[0].properties.Trail_Name + "<br><strong>Total Length:</strong> "+e.features[0].properties.Length_KMS +" KMS"+ "<br><strong>Association Name:</strong> "+ e.features[0].properties.Association + "<br><strong>Trail Type:</strong> "+ e.features[0].properties.Grouping+ "<br><strong>Degree Of Difficulty (1 - 5 Scale):</strong> "+ e.features[0].properties.DegreeOfDifficulty)
 .addTo(map);
 }); 
      	    
