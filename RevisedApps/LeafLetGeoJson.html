@@ -19,7 +19,7 @@
     integrity="sha512-cMQ5e58BDuu1pr9BQ/eGRn6HaR6Olh0ofcHFWe5XesdCITVuSBiBZZbhCijBe5ya238f/zMMRYIMIIg1jxv4sQ=="
     crossorigin=""></script>
 
-	<!-- Load Esri Leaflet Renderers from CDN -->
+	<!-- Load Esri Leaflet Renderers from CDN -->g
   	<script src="https://unpkg.com/esri-leaflet-renderers@2.0.6/dist/esri-leaflet-renderers.js"
     integrity="sha512-mhpdD3igvv7A/84hueuHzV0NIKFHmp2IvWnY5tIdtAHkHF36yySdstEVI11JZCmSY4TCvOkgEoW+zcV/rUfo0A=="
     crossorigin=""></script>
@@ -116,13 +116,17 @@ var FourSeasons_MountainBikingTrails = new L.GeoJSON.AJAX("FourSeasons_MountainB
 {
     style: function(feature) {
         switch (feature.properties.Name) {
-            case 'B Loop': return {color: "#E60000"; weight: 2};
-            case 'D Loop':   return {color: "#FEB8B7"; weight: 2};
-	    case 'M Loop':   return {color: "#E3B3FD"; weight: 2};
-	    case 'S Loop':   return {color: "#ab72a5"; weight: 2};
-	    case 'H Loop':   return {color: "#70A800"; weight: 2};
-	    case 'D-M Loop':   return {color: "#cc765c"; weight: 2};
-	    case "Ray's Junction":   return {color: "#5c4f4b"; weight: 2};
+            case 'B Loop': return {color: "#E60000"};
+            case 'B Loop': return {weight: 2};
+	case 'D Loop':   return {color: "#FEB8B7"};
+	    case 'D Loop': return {weight: 2};
+		case 'M Loop':   return {color: "#E3B3FD"};
+	    case 'M Loop': return {weight: 2};
+		case 'S Loop':   return {color: "#ab72a5"};
+	    case 'S Loop': return {weight: 2};
+		case 'H Loop':   return {color: "#70A800"};
+	    case 'D-M Loop':   return {color: "#cc765c"};
+	    case "Ray's Junction":   return {color: "#5c4f4b"};
         }
     },
 	onEachFeature: onEachFeature1
