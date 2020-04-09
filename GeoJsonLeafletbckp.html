@@ -146,7 +146,8 @@ var DeepRiverTrails = new L.GeoJSON.AJAX("DeepRiverTrails.geojson",
 	    case 'Ottawa River Water Trail':   return {color: "#cc765c"};
         }
     },
-	onEachFeature: onEachFeature
+	onEachFeature: onEachFeature,
+	weight: 1.5
 });       
 DeepRiverTrails.addTo(map);
 
