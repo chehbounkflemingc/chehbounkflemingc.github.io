@@ -116,17 +116,18 @@ var FourSeasons_MountainBikingTrails = new L.GeoJSON.AJAX("FourSeasons_MountainB
 {
     style: function(feature) {
         switch (feature.properties.Name) {
-            case 'B Loop': return {weight: 2};
-	    case 'D Loop': return {weight: 2};
-	    case 'M Loop': return {weight: 2};
-	    case 'S Loop': return {weight: 2};
-	case 'H Loop': return {weight: 2};
+            case 'B Loop': return {color: 2};
+	    case 'D Loop': return {color: 2};
+	    case 'M Loop': return {color: 2};
+	    case 'S Loop': return {color: 2};
+	case 'H Loop': return {color: 2};
 
-	    case 'D-M Loop':   return {weight: 2};
-	    case "Ray's Junction":   return {weight: 2};
+	    case 'D-M Loop':   return {color: 2};
+	    case "Ray's Junction":   return {color: 2};
         }
     },
-	onEachFeature: onEachFeature1
+	onEachFeature: onEachFeature1,
+	weight: 1
 });       
 FourSeasons_MountainBikingTrails.addTo(map);  
 	  
