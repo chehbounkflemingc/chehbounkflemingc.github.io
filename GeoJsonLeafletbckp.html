@@ -110,7 +110,11 @@ function onEachFeature1(feature, layer) {
         layer.bindPopup(feature.properties.Name);
     }
 } 
+	  
 
+	  
+
+	  
 var FourSeasons_MountainBikingTrails = new L.GeoJSON.AJAX("FourSeasons_MountainBikingTrails.geojson",
 {
     style: function(feature) {
@@ -124,7 +128,8 @@ var FourSeasons_MountainBikingTrails = new L.GeoJSON.AJAX("FourSeasons_MountainB
 	    case "Ray's Junction":   return {color: "#5c4f4b"};
         }
     },
-	onEachFeature: onEachFeature1
+	onEachFeature: onEachFeature1,
+	weight: 2
 });       
 FourSeasons_MountainBikingTrails.addTo(map);  
 	  
