@@ -114,7 +114,7 @@ function onEachFeature(feature, layer) {
 function onEachFeature1(feature, layer) {
     // does this feature have a property named popupContent?
     if (feature.properties && feature.properties.Name) {
-        layer.bindPopup(feature.properties.Name);
+        layer.bindPopup("<strong>Trail Name: </strong>" +feature.properties.Name + "<br><strong>Area:</strong> "+feature.properties.Area);
     }
 } 
 
@@ -125,7 +125,7 @@ var FourSeasons_MountainBikingTrails = new L.GeoJSON.AJAX("FourSeasons_MountainB
             case 'B Loop': return {color: "#E60000"};
             case 'D Loop':   return {color: "#59597a"};
 	    case 'M Loop':   return {color: "#800080"};
-	    case 'S Loop':   return {color: "#ab72a5"};
+	    case 'S Loop':   return {color: "#0000FF"};
 	    case 'H Loop':   return {color: "#70A800"};
 	    case 'D-M Loop':   return {color: "#cc765c"};
 	    case "Ray's Junction":   return {color: "#5c4f4b"};
