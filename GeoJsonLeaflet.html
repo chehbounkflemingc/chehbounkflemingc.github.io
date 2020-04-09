@@ -48,7 +48,7 @@
 /*Legend specific: https://codepen.io/haakseth/pen/KQbjdO*/ 
 .legend {
   padding: 6px 8px;
-  font: 14px Arial, Helvetica, sans-serif;
+  font: 10px Arial, Helvetica, sans-serif;
   background: white;
   background: rgba(255, 255, 255, 0.8);
   /*box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);*/
@@ -58,7 +58,7 @@
 }
 .legend h4 {
   text-align: center;
-  font-size: 16px;
+  font-size: 12px;
   margin: 2px 12px 8px;
   color: #777;
 }
@@ -69,8 +69,8 @@
 }
 
 .legend i {
-  width: 18px;
-  height: 18px;
+  width: 12px;
+  height: 12px;
   float: left;
   margin: 0 8px 0 0;
   opacity: 0.7;
@@ -134,17 +134,15 @@ var FourSeasons_MountainBikingTrails = new L.GeoJSON.AJAX("FourSeasons_MountainB
 	weight: 2
 });       
 FourSeasons_MountainBikingTrails.addTo(map);  
-	  
-	   
+	  	   
 var DeepRiverTrails = new L.GeoJSON.AJAX("DeepRiverTrails.geojson",
 {
     style: function(feature) {
         switch (feature.properties.Trail_Name) {
-            case 'Biking Trail Chalk River to Deep River': return {color: "#E60000"};
-            case 'Deep River Walking Trail':   return {color: "#FEB8B7"};
-	    case 'Deep River - Cabin Trail - Base Lake Road':   return {color: "#E3B3FD"};
-		case 'Silver Spoon Trail System':   return {color: "#e327cf",opacity: 0.6};
-	    case 'Mount Martin Trail':   return {color: "#70A800"};
+            case 'Biking Trail Chalk River to Deep River': return {color: "#ffde00"};
+            case 'Deep River Walking Trail':   return {color: "#007aa3"};
+	    case 'Deep River - Cabin Trail - Base Lake Road':   return {color: "#A52A2A"};
+	    case 'Mount Martin Trail':   return {color: "#ff5d00"};
 	    case 'Ottawa River Water Trail':   return {color: "#cc765c"};
         }
     },
@@ -152,11 +150,6 @@ var DeepRiverTrails = new L.GeoJSON.AJAX("DeepRiverTrails.geojson",
 	weight: 2
 });       
 DeepRiverTrails.addTo(map);
-	  
-	  
-
-	  
-	  
 
 
 var OttawaValleyRecreationalTrail = new L.GeoJSON.AJAX("OttawaValleyRecreationalTrail.geojson",
@@ -201,14 +194,7 @@ legend.onAdd = function(map) {
 legend.addTo(map);
 	  
 /* Adding scale bar*/
-	L.control.search({
-		layer: DeepRiverTrails,
-		buildTip: function(text, val) {
-			var name = val.layer.feature.properties.Trail_Name;
-			return name;
-		}
-	})
-	.addTo(map);
+L.control.scale().addTo(map);		
 
 </script>
 </body>
