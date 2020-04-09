@@ -511,11 +511,7 @@ L.mapbox.legendControl({ position: 'topright' }).addLegend('<strong>The Corporat
 
 var stateLegendEl = document.getElementById('legend');
 map.on('zoom', function() {
-if (map.getZoom() > zoomThreshold) {
-stateLegendEl.style.display = 'none';
-} else {
 stateLegendEl.style.display = 'block';
-}
 });
 
 </script>
