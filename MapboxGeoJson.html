@@ -123,7 +123,7 @@ map.addLayer({
 map.on('click', 'Deep River - Cabin Trail - Base Lake Road', function(e) {
 new mapboxgl.Popup()
 .setLngLat(e.lngLat)
-.setHTML("<strong>Trail Name: </strong>" + e.features[0].properties.Trail_Name)
+.setHTML("<strong>Trail Name: </strong>" +e.features[0].properties.Trail_Name + "<br><strong>Total Length:</strong> "+e.features[0].properties.Length_KMS +" KMS"+ "<br><strong>Association Name:</strong> "+ e.features[0].properties.Association + "<br><strong>Trail Type:</strong> "+ feature.properties.Grouping+ "<br><strong>Degree Of Difficulty (1 - 5 Scale):</strong> "+ e.features[0].properties.DegreeOfDifficulty)
 .addTo(map);
 }); 
 
@@ -131,28 +131,28 @@ new mapboxgl.Popup()
 map.on('click', 'Ottawa River Walking Trail', function(e) {
 new mapboxgl.Popup()
 .setLngLat(e.lngLat)
-.setHTML("<strong>Trail Name: </strong>" +e.features[0].properties.Trail_Name)
+.setHTML("<strong>Trail Name: </strong>" +e.features[0].properties.Trail_Name + "<br><strong>Total Length:</strong> "+e.features[0].properties.Length_KMS +" KMS"+ "<br><strong>Association Name:</strong> "+ e.features[0].properties.Association + "<br><strong>Trail Type:</strong> "+ feature.properties.Grouping+ "<br><strong>Degree Of Difficulty (1 - 5 Scale):</strong> "+ e.features[0].properties.DegreeOfDifficulty)
 .addTo(map);
 }); 
  
 map.on('click', 'Mount Martin Trail', function(e) {
 new mapboxgl.Popup()
 .setLngLat(e.lngLat)
-.setHTML("<strong>Trail Name: </strong>" +e.features[0].properties.Trail_Name)
+.setHTML("<strong>Trail Name: </strong>" +e.features[0].properties.Trail_Name + "<br><strong>Total Length:</strong> "+e.features[0].properties.Length_KMS +" KMS"+ "<br><strong>Association Name:</strong> "+ e.features[0].properties.Association + "<br><strong>Trail Type:</strong> "+ feature.properties.Grouping+ "<br><strong>Degree Of Difficulty (1 - 5 Scale):</strong> "+ e.features[0].properties.DegreeOfDifficulty)
 .addTo(map);
 }); 
 	    
 map.on('click', 'Biking Trail Chalk River to Deep River', function(e) {
 new mapboxgl.Popup()
 .setLngLat(e.lngLat)
-.setHTML(e.features[0].properties.Trail_Name)
+.setHTML("<strong>Trail Name: </strong>" +e.features[0].properties.Trail_Name + "<br><strong>Total Length:</strong> "+e.features[0].properties.Length_KMS +" KMS"+ "<br><strong>Association Name:</strong> "+ e.features[0].properties.Association + "<br><strong>Trail Type:</strong> "+ feature.properties.Grouping+ "<br><strong>Degree Of Difficulty (1 - 5 Scale):</strong> "+ e.features[0].properties.DegreeOfDifficulty)
 .addTo(map);
 }); 
 
 map.on('click', 'Ottawa River Water Trail', function(e) {
 new mapboxgl.Popup()
 .setLngLat(e.lngLat)
-.setHTML(e.features[0].properties.Trail_Name)
+.setHTML("<strong>Trail Name: </strong>" +e.features[0].properties.Trail_Name + "<br><strong>Total Length:</strong> "+e.features[0].properties.Length_KMS +" KMS"+ "<br><strong>Association Name:</strong> "+ e.features[0].properties.Association + "<br><strong>Trail Type:</strong> "+ feature.properties.Grouping+ "<br><strong>Degree Of Difficulty (1 - 5 Scale):</strong> "+ e.features[0].properties.DegreeOfDifficulty)
 .addTo(map);
 }); 
      	    
@@ -162,9 +162,7 @@ new mapboxgl.Popup()
 map.on('mouseenter', 'Deep River - Cabin Trail - Base Lake Road', function() {
 map.getCanvas().style.cursor = 'pointer';
 });
-map.on('mouseenter', 'Silver Spoon Trail System', function() {
-map.getCanvas().style.cursor = 'pointer';
-});
+
 map.on('mouseenter', 'Ottawa River Walking Trail', function() {
 map.getCanvas().style.cursor = 'pointer';
 });
@@ -182,9 +180,7 @@ map.getCanvas().style.cursor = 'pointer';
 map.on('mouseleave', 'Deep River - Cabin Trail - Base Lake Road', function() {
 map.getCanvas().style.cursor = '';
 });
-map.on('mouseleave', 'Silver Spoon Trail System', function() {
-map.getCanvas().style.cursor = '';
-});
+
 map.on('mouseleave', 'Ottawa River Walking Trail', function() {
 map.getCanvas().style.cursor = '';
 });
@@ -200,13 +196,7 @@ map.getCanvas().style.cursor = '';
 });
 
 
-
-
-
-
-
-
-
+	
 var url2 = 'https://chehbounkflemingc.github.io/FourSeasons_MountainBikingTrails.geojson';
     map.on('load', function() {
         window.setInterval(function() {   
@@ -300,6 +290,44 @@ map.addLayer({
           
         		}); 
 });	
+	
+
+
+map.on('click', 'B Loop', function(e) {
+new mapboxgl.Popup()
+.setLngLat(e.lngLat)
+.setHTML("<strong>Trail Name: </strong>" +e.features[0].properties.Name + "<br><strong>Area (SKM):</strong> "+e.features[0].properties.area)
+.addTo(map);
+}); 
+
+map.on('click', 'D Loop', function(e) {
+new mapboxgl.Popup()
+.setLngLat(e.lngLat)
+.setHTML("<strong>Trail Name: </strong>" +e.features[0].properties.Name + "<br><strong>Area (SKM):</strong> "+e.features[0].properties.area)
+.addTo(map);
+}); 
+
+map.on('click', 'M Loop', function(e) {
+new mapboxgl.Popup()
+.setLngLat(e.lngLat)
+.setHTML("<strong>Trail Name: </strong>" +e.features[0].properties.Name + "<br><strong>Area (SKM):</strong> "+e.features[0].properties.area)
+.addTo(map);
+}); 
+
+map.on('click', 'H Loop', function(e) {
+new mapboxgl.Popup()
+.setLngLat(e.lngLat)
+.setHTML("<strong>Trail Name: </strong>" +e.features[0].properties.Name + "<br><strong>Area (SKM):</strong> "+e.features[0].properties.area)
+.addTo(map);
+}); 
+
+map.on('click', 'S Loop', function(e) {
+new mapboxgl.Popup()
+.setLngLat(e.lngLat)
+.setHTML("<strong>Trail Name: </strong>" +e.features[0].properties.Name + "<br><strong>Area (SKM):</strong> "+e.features[0].properties.area)
+.addTo(map);
+}); 
+
 
 
 
