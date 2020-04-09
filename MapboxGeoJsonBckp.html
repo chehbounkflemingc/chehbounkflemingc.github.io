@@ -52,23 +52,12 @@ map.addLayer({
           
         		});
    map.addLayer({
-            	'id': 'Silver Spoon Trail System',
-            	'type': 'line',
-            	'source': 'DeepRiverTrails',
-            	'layout': {},
-            	'paint': {
-		'line-color': '#8400ff',
-		'line-width': 2
-			},
-    		'filter': ['==', '$id', 2]
-             		});
-    map.addLayer({
             	'id': 'Ottawa River Walking Trail',
             	'type': 'line',
             	'source': 'DeepRiverTrails',
             	'layout': {},
             	'paint': {
-		'line-color': '#00ff00',
+		'line-color': '#daa520',
 		'line-width': 2
 			},
     		'filter': ['==', '$id', 3]
@@ -161,8 +150,7 @@ new mapboxgl.Popup()
 map.on('mouseenter', 'Deep River - Cabin Trail - Base Lake Road', function() {
 map.getCanvas().style.cursor = 'pointer';
 });
-map.on('mouseenter', 'Silver Spoon Trail System', function() {
-map.getCanvas().style.cursor = 'pointer';
+
 });
 map.on('mouseenter', 'Ottawa River Walking Trail', function() {
 map.getCanvas().style.cursor = 'pointer';
@@ -181,8 +169,7 @@ map.getCanvas().style.cursor = 'pointer';
 map.on('mouseleave', 'Deep River - Cabin Trail - Base Lake Road', function() {
 map.getCanvas().style.cursor = '';
 });
-map.on('mouseleave', 'Silver Spoon Trail System', function() {
-map.getCanvas().style.cursor = '';
+
 });
 map.on('mouseleave', 'Ottawa River Walking Trail', function() {
 map.getCanvas().style.cursor = '';
@@ -390,7 +377,7 @@ map.addLayer({
             	'source': 'BikeRoutes_VouageurRoute',
             	'layout': {},
             	'paint': {
-		'line-color': '#c62535',
+		'line-color': '#6ea4b8',
 		'line-width': 2
 			},
     		
