@@ -333,31 +333,10 @@ var url3 = 'https://chehbounkflemingc.github.io/OttawaValleyRecreationalTrail.ge
         window.setInterval(function() {   
        map.getSource('OttawaValleyRecreationalTrail.geojson').setData(url2);
         }, 2000);
-        map.addSource('OttawaValleyRecreationalTrail.geojson', { type: 'geojson', data: url2 });
-            
-
-map.addLayer({
-            	'id': '1'
-            	'type': 'line',
-            	'source': 'OttawaValleyRecreationalTrail.geojson',
-            	'layout': {},
-            	'paint': {
-		'line-color': '#E60000',
-		'line-width': 2
-			},
-    		'filter': ['==', '$id', 1]
-          
-        		});
-});	
 	
 
 
-map.on('click', '1', function(e) {
-new mapboxgl.Popup()
-.setLngLat(e.lngLat)
-.setHTML("<strong>Trail Name: </strong>" +"Ottawa Valley Recreational Trail")
-.addTo(map);
-}); 
+
 
 
 
