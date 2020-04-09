@@ -116,13 +116,13 @@ var FourSeasons_MountainBikingTrails = new L.GeoJSON.AJAX("FourSeasons_MountainB
 {
     style: function(feature) {
         switch (feature.properties.Name) {
-            case 'B Loop': return {color: "#E60000", weight: 1};
-            case 'D Loop':   return {color: "#FEB8B7", weight: 1};
-	    case 'M Loop':   return {color: "#E3B3FD", weight: 1};
-	    case 'S Loop':   return {color: "#ab72a5", weight: 1};
-	    case 'H Loop':   return {color: "#70A800", weight: 1};
-	    case 'D-M Loop':   return {color: "#cc765c", weight: 1};
-	    case "Ray's Junction":   return {color: "#5c4f4b", weight: 1};
+            case 'B Loop': return {color: "#E60000", weight: 2};
+            case 'D Loop':   return {color: "#FEB8B7", weight: 2};
+	    case 'M Loop':   return {color: "#E3B3FD", weight: 2};
+	    case 'S Loop':   return {color: "#ab72a5", weight: 2};
+	    case 'H Loop':   return {color: "#70A800", weight: 2};
+	    case 'D-M Loop':   return {color: "#cc765c", weight: 2};
+	    case "Ray's Junction":   return {color: "#5c4f4b", weight: 2};
         }
     },
 	onEachFeature: onEachFeature1
@@ -134,12 +134,12 @@ var DeepRiverTrails = new L.GeoJSON.AJAX("DeepRiverTrails.geojson",
 {
     style: function(feature) {
         switch (feature.properties.Trail_Name) {
-            case 'Biking Trail Chalk River to Deep River': return {color: "#ffde00", weight: 1};
-		case 'Deep River Walking Trail':   return {color: "#007aa3", weight: 1};
-	    case 'Deep River - Cabin Trail - Base Lake Road':   return {color: "#A52A2A", weight: 1};
-		case 'Silver Spoon Trail System':   return {color: "#e327cf", weight: 1};
-	    case 'Mount Martin Trail':   return {color: "#ff5d00", weight: 1};
-	    case 'Ottawa River Water Trail':   return {color: "#cc765c", weight: 1};
+            case 'Biking Trail Chalk River to Deep River': return {color: "#ffde00", weight: 2};
+		case 'Deep River Walking Trail':   return {color: "#007aa3", weight: 2};
+	    case 'Deep River - Cabin Trail - Base Lake Road':   return {color: "#A52A2A", weight: 2};
+		case 'Silver Spoon Trail System':   return {color: "#e327cf", weight: 2};
+	    case 'Mount Martin Trail':   return {color: "#ff5d00", weight: 2};
+	    case 'Ottawa River Water Trail':   return {color: "#cc765c", weight: 2};
         }
     },
 	onEachFeature: onEachFeature
@@ -150,7 +150,7 @@ DeepRiverTrails.addTo(map);
 var OttawaValleyRecreationalTrail = new L.GeoJSON.AJAX("OttawaValleyRecreationalTrail.geoJson",
 {
 	color:'blue',
-	weight: 1
+	weight: 2
 });   
 OttawaValleyRecreationalTrail.addTo(map);
 
@@ -159,7 +159,7 @@ var BikeRoutes_VouageurRoute = new L.GeoJSON.AJAX("BikeRoutes_VouageurRoute.geoj
 {
 	onEachFeature: onEachFeature1,
 	color:'red',
-	weight: 1
+	weight: 2
 });
 BikeRoutes_VouageurRoute.addTo(map);
 
