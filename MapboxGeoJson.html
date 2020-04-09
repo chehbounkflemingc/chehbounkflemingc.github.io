@@ -34,7 +34,7 @@ var map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/mapbox/streets-v11',
         center: [-77.45, 46.080],
-        zoom: 8
+        zoom: 12
     });
 
 
@@ -328,6 +328,36 @@ new mapboxgl.Popup()
 .addTo(map);
 }); 
 
+var url3 = 'https://chehbounkflemingc.github.io/OttawaValleyRecreationalTrail.geojson';
+    map.on('load', function() {
+        window.setInterval(function() {   
+       map.getSource('OttawaValleyRecreationalTrail.geojson').setData(url2);
+        }, 2000);
+        map.addSource('OttawaValleyRecreationalTrail.geojson', { type: 'geojson', data: url2 });
+            
+
+map.addLayer({
+            	'id': '1'
+            	'type': 'line',
+            	'source': 'OttawaValleyRecreationalTrail.geojson',
+            	'layout': {},
+            	'paint': {
+		'line-color': '#E60000',
+		'line-width': 2
+			},
+    		'filter': ['==', '$id', 1]
+          
+        		});
+});	
+	
+
+
+map.on('click', '1', function(e) {
+new mapboxgl.Popup()
+.setLngLat(e.lngLat)
+.setHTML("<strong>Trail Name: </strong>" +"Ottawa Valley Recreational Trail")
+.addTo(map);
+}); 
 
 
 
