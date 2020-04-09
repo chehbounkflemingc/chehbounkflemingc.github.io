@@ -219,13 +219,6 @@ map.getCanvas().style.cursor = '';
 });
 
 
-
-
-
-
-
-
-
 var url2 = 'https://chehbounkflemingc.github.io/FourSeasons_MountainBikingTrails.geojson';
     map.on('load', function() {
         window.setInterval(function() {   
@@ -319,6 +312,104 @@ map.addLayer({
           
         		}); 
 });	
+
+var url3 = 'https://chehbounkflemingc.github.io/BikeRoutes_VouageurRoute.geojson';
+    map.on('load', function() {
+        window.setInterval(function() {
+            map.getSource('BikeRoutes_VouageurRoute').setData(url3);
+        }, 2000);
+        map.addSource('BikeRoutes_VouageurRoute', { type: 'geojson', data: url3 });
+      
+map.addLayer({
+            	'id': 'Bike Routes Vouageur Route',
+            	'type': 'line',
+            	'source': 'BikeRoutes_VouageurRoute',
+            	'layout': {},
+            	'paint': {
+		'line-color': '#6ea4b8',
+		'line-width': 2
+			},
+    		
+          
+     });   // Whn a click event occurs on a feature in the places layer, open a popup at the
+// location of the feature, with description HTML from its properties.
+map.on('click', 'Bike Routes Vouageur Route', function(e) {
+new mapboxgl.Popup()
+.setLngLat(e.lngLat)
+.setHTML(e.features[0].properties.Name)
+.addTo(map);
+});    	    
+        
+ // Change the cursor to a pointer when the mouse is over the places layer.
+      
+map.on('mouseenter', 'Bike Routes Vouageur Route', function() {
+map.getCanvas().style.cursor = 'pointer';
+});   
+// Change it back to a pointer when it leaves.
+map.on('mouseleave', 'Bike Routes Vouageur Route', function() {
+map.getCanvas().style.cursor = '';
+});
+      
+         // Whn a click event occurs on a feature in the places layer, open a popup at the
+// location of the feature, with description HTML from its properties.
+map.on('click', 'Bike Routes Vouageur Route', function(e) {
+new mapboxgl.Popup()
+.setLngLat(e.lngLat)
+.setHTML(e.features[0].properties.Name)
+.addTo(map);
+});    	    
+        
+ // Change the cursor to a pointer when the mouse is over the places layer.
+      
+map.on('mouseenter', 'Bike Routes Vouageur Route', function() {
+map.getCanvas().style.cursor = 'pointer';
+});   
+// Change it back to a pointer when it leaves.
+map.on('mouseleave', 'Bike Routes Vouageur Route', function() {
+map.getCanvas().style.cursor = '';
+});
+      
+       });
+
+var url4 = 'https://chehbounkflemingc.github.io/OttawaValleyRecreationalTrail.geojson';
+    map.on('load', function() {
+        window.setInterval(function() {   
+       map.getSource('OttawaValleyRecreationalTrail').setData(url4);
+        }, 2000);
+        map.addSource('OttawaValleyRecreationalTrail', { type: 'geojson', data: url4 });
+            
+map.addLayer({
+            	'id': 'Ottawa Valley Recreational Trail',
+            	'type': 'line',
+            	'source': 'OttawaValleyRecreationalTrail',
+            	'layout': {},
+            	'paint': {
+		'line-color': '#1567d8',
+		'line-width': 2
+			},
+    		      
+        		});
+// Whn a click event occurs on a feature in each layer, open a popup at the
+// location of the feature, with description HTML from its properties.
+map.on('click', 'Ottawa Valley Recreational Trail', function(e) {
+new mapboxgl.Popup()
+.setLngLat(e.lngLat)
+.setHTML(e.features[0].properties.Name)
+.addTo(map);
+}); 
+        
+ // Change the cursor to a pointer when the mouse is over each layer.
+      
+map.on('mouseenter', 'Ottawa Valley Recreational Trail', function() {
+map.getCanvas().style.cursor = 'pointer';
+});
+	    
+// Change it back to a pointer when it leaves.
+map.on('mouseleave', 'Ottawa Valley Recreational Trail', function() {
+map.getCanvas().style.cursor = '';
+});
+      });
+
 
 
 
