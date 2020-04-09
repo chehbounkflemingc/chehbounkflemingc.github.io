@@ -132,14 +132,14 @@ new mapboxgl.Popup()
 map.on('click', 'Ottawa River Walking Trail', function(e) {
 new mapboxgl.Popup()
 .setLngLat(e.lngLat)
-.setHTML("<strong>Trail Name: </strong>" +e.features[0].properties.Trail_Name)
+.setHTML(e.features[0].properties.Trail_Name)
 .addTo(map);
 }); 
  
 map.on('click', 'Mount Martin Trail', function(e) {
 new mapboxgl.Popup()
 .setLngLat(e.lngLat)
-.setHTML("<strong>Trail Name: </strong>" +e.features[0].properties.Trail_Name)
+.setHTML(e.features[0].properties.Trail_Name)
 .addTo(map);
 }); 
 	    
@@ -153,7 +153,7 @@ new mapboxgl.Popup()
 map.on('click', 'Ottawa River Water Trail', function(e) {
 new mapboxgl.Popup()
 .setLngLat(e.lngLat)
-.setHTML("<strong>Trail Name: </strong>" +e.features[0].properties.Trail_Name)
+.setHTML(e.features[0].properties.Trail_Name)
 .addTo(map);
 }); 
      	    
