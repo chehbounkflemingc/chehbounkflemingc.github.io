@@ -126,20 +126,19 @@ new mapboxgl.Popup()
 .setHTML("<strong>Trail Name: </strong>" + e.features[0].properties.Trail_Name)
 .addTo(map);
 }); 
-        "<strong>Trail Name: </strong>" +feature.properties.Trail_Name + "<br><strong>Total Length:</strong> "+feature.properties.Length_KMS +" KMS"+ "<br><strong>Association Name:</strong> "+ feature.properties.Association + "<br><strong>Trail Type:</strong> "+ feature.properties.Grouping+ "<br><strong>Degree Of Difficulty (1 - 5 Scale):</strong> "+ feature.properties.DegreeOfDifficulty );
 
   
 map.on('click', 'Ottawa River Walking Trail', function(e) {
 new mapboxgl.Popup()
 .setLngLat(e.lngLat)
-.setHTML(e.features[0].properties.Trail_Name)
+.setHTML("<strong>Trail Name: </strong>" +e.features[0].properties.Trail_Name)
 .addTo(map);
 }); 
  
 map.on('click', 'Mount Martin Trail', function(e) {
 new mapboxgl.Popup()
 .setLngLat(e.lngLat)
-.setHTML(e.features[0].properties.Trail_Name)
+.setHTML("<strong>Trail Name: </strong>" +e.features[0].properties.Trail_Name)
 .addTo(map);
 }); 
 	    
