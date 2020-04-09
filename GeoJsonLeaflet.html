@@ -118,6 +118,13 @@ function onEachFeature1(feature, layer) {
     }
 } 
 
+function onEachFeature3(feature, layer) {
+    // does this feature have a property named popupContent?
+    if (feature.properties && feature.properties.Trail_Name) {
+        layer.bindPopup("<strong>Trail Name: </strong>" +"Ottawa Valley Recreational Trail");
+    }
+}
+
 var FourSeasons_MountainBikingTrails = new L.GeoJSON.AJAX("FourSeasons_MountainBikingTrails.geojson",
 {
     style: function(feature) {
@@ -155,6 +162,7 @@ DeepRiverTrails.addTo(map);
 
 var OttawaValleyRecreationalTrail = new L.GeoJSON.AJAX("OttawaValleyRecreationalTrail.geojson",
 {
+	onEachFeature: onEachFeature3,
 	color:'blue',
 	weight: 2
 });   
