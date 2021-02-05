@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Add Map</title>
+    
+    
+    <!--################################################################################################## -->
+
+
+        <meta charset="utf-8">
+        
+          <!-- Load the stylesheet --->
+<link rel="stylesheet" type="text/css" href="/gmaps/css/style.css">
+	<!-- Responsive Design --->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Navbar Design --->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<!--################################################################################################# -->
+
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5a1FoKmbmQ1djPh6pRx7oiknBf3ACNOE&callback=initMap&libraries=&v=weekly"
+      defer
+    ></script>
+    <style type="text/css">
+      /* Set the size of the div element that contains the map */
+html, body, .container,  #map {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+      #map {
+        /* The width is the width of the web page */
+	position: relative;
+	align-items: center;
+	text-align : center;
+
+      }
+
+      }
+    </style>
+    <script>
+      // Initialize and add the map
+      function initMap() {
+        // The location of Garthdee
+        const garthdee = { lat: 57.118802823163335, lng: -2.138932084657548 };
+        // The map, centered at Garthdee
+        const map = new google.maps.Map(document.getElementById("map"), {
+          zoom: 14,
+          center: garthdee,
+        });
+        // The marker, positioned at Garthdee
+        const marker = new google.maps.Marker({
+          position: garthdee,
+          map: map,
+        });
+      }
+    </script>
+  </head>
+  <body>
+
+
+	<!--################################################################################################# -->
+     <!--The div element for the map -->
+  	<div id="map"></div>
+  </body>
+</html>
