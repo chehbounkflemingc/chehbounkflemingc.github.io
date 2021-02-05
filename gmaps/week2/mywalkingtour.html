@@ -26,23 +26,14 @@
       defer
     ></script>
     <style type="text/css">
-      /* Set the size of the div element that contains the map */
-      #map {
-        height: 625px;
-        /* The height is 400 pixels */
-        width: 1200px;
-        /* The width is the width of the web page */
-	align-items: center;
-	text-align : center;
 
-      }
     </style>
     <script>
 // This example uses the Google Maps JavaScript API's Data layer
 // to create a rectangular polygon with 2 holes in it.
 function initMap() {
   const map = new google.maps.Map(document.getElementById("map"), {
-    zoom: 15,
+    zoom: 14,
     center: { lat: 48.86440068654533, lng: 2.32032872736463 },
 	   
   });
