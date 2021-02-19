@@ -35,7 +35,7 @@
     const view = new MapView({
       container: "viewDiv",
       map: map,
-      center: [45.424, -75.695], //Longitude, latitude
+      center: [-75.695,45.424], //Longitude, latitude
       zoom: 13
     });
 
@@ -43,7 +43,7 @@
 
     const select = document.createElement("select","");
       select.setAttribute("class", "esri-widget esri-select");
-      select.setAttribute("style", "width: 175px; font-family: 'Avenir Next W00'; font-size: 1em");
+      select.setAttribute("style", "width: 175px; font-family: 'Avenir Next W00'; font-size: 1em", background-color: "#FF1493");
 
     places.forEach(function(p){
       const option = document.createElement("option");
@@ -81,7 +81,7 @@
              color: "#000000",
              size: "12px",
              outline: {
-               color: "#ffffff",
+               color: "#FF1493",
                width: "2px"
              }
             },
