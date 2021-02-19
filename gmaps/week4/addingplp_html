@@ -1,3 +1,6 @@
+
+
+
 <!DOCTYPE html>
 <html lang="en"> <!-- Declare langauage for webpage-->
 
@@ -17,6 +20,9 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 
+<!--################################################################################################# -->
+
+<body>
 <!--################################################################################################# -->
 
 <body>
@@ -42,11 +48,11 @@
 
         </ul>
       </li>
-	<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Week 4<span class="caret"></span></a>
+ 	<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Week 4<span class="caret"></span></a>
         <ul class="dropdown-menu">
           <li><a href="/gmaps/week4/hostedfeaturelayer.html">Hosted Feature Layer and REST</a></li>
           <li><a href="/gmaps/week4/mapdisp.html">Displaying a Map </a></li>
-          <li><a href="/gmaps/week4/addingpoilipol.html">Adding Points, Lines, and Polygons</a></li>
+          <li><a href="/gmaps/week4/addingplp_html">Adding Points, Lines, and Polygons</a></li>
           <li><a href="/gmaps/week4/places.html">Finding a Place</a></li>
 
         </ul>
@@ -55,15 +61,19 @@
     </ul>
   </div>
 </nav>
+  
+	
 	<!--################################################################################################# -->
-  <h2 class="title"> Adding Points, Lines, and Polygons. </h2>	
+	
+	
 		<div class="question">
-		<h3> Shark Spotter Sites & Sighting.</h3>
+			<h3>Points, Lines, and Polygons</h3>
 			<div class="framer">
-				<iframe class="responsive-iframe" src="/week4/addingpoilipol.html"></iframe>
+				<iframe class="responsive-iframe" src="https://kamelche.github.io/gmaps/week4/addingpoilipol.html" title="points, Lines, and Polygons" ></iframe>
 			</div>
-		<hr class="line">  
-		</div> 
+					<hr class="line">  
+
+		</div>	
 
 </body>
 </html>
