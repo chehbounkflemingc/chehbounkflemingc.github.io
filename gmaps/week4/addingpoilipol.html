@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
-  <title>ArcGIS API for JavaScript Tutorials: Add a point, line, and polygon</title>
+  <title>ArcGIS API for JavaScript Tutorials: Adding Points, lines, and polygons</title>
   <style>
     html, body, #viewDiv {
       padding: 0;
@@ -26,7 +26,7 @@
 
     ], function(esriConfig,Map, MapView, Graphic, GraphicsLayer) {
 
-  esriConfig.apiKey = "AAPK1acb2c0aca254d899b513d2774a2ad7bLA85UxHnxkAJe1_m_pn1PNIAeQWAJHVyyFDesg3vn51GXRLbCexZnSsuy43QM7iJ";
+  esriConfig.apiKey = "AIzaSyDoQotoGwnQI4qbHYH7WarUOz1pKaBd1Fc";
 
   const map = new Map({
     basemap: "arcgis-topographic" //Basemap layer service
@@ -49,9 +49,9 @@
  };
  const simpleMarkerSymbol = {
     type: "simple-marker",
-    color: [226, 119, 40],  // Orange
+    color: [173, 173, 173],  
     outline: {
-        color: [255, 255, 255], // White
+        color: [173, 173, 1730], 
         width: 1
     }
  };
@@ -73,7 +73,7 @@
  };
  const simpleLineSymbol = {
     type: "simple-line",
-    color: [226, 119, 40], // Orange
+    color: [173, 173, 173],
     width: 2
  };
 
@@ -97,10 +97,10 @@
 
  const simpleFillSymbol = {
     type: "simple-fill",
-    color: [227, 139, 79, 0.8],  // Orange, opacity 80%
+    color: [173, 173, 173, 0.7], 
     outline: {
-        color: [255, 255, 255],
-        width: 1
+        color: [173, 173, 173],
+        width: 2
     }
  };
 
@@ -110,7 +110,7 @@
  }
  const attributes = {
     Name: "Graphic",
-    Description: "I am a polygon"
+    Description: "Polygon Sample"
  }
 
  const polygonGraphic = new Graphic({
