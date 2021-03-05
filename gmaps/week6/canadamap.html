@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Canada Map</title>
+    <style>
+      html,
+      body,
+      #viewDiv {
+        padding: 0;
+        margin: 0;
+        height: 100%;
+        width: 100%;
+      }
+    </style>
+<link rel="stylesheet" href="https://js.arcgis.com/4.18/esri/themes/light/main.css">
+<script src="https://js.arcgis.com/4.18/"></script>
+
+<script>
+  require([
+    "esri/config",
+    "esri/Map",
+    "esri/views/MapView",
+    "esri/layers/FeatureLayer"
+  ], function(esriConfig,Map, MapView, FeatureLayer) {
+  esriConfig.apiKey = "AAPK58f5f545f6074f11b063859ff2bf74594Gukz_VkLkyUyzvSJ3VI9pM3JDPxINMKxE4pXC2h1WFzdwYeJmHLigCcphCW1Fj0";
+  const map = new Map({
+    basemap: "arcgis-light-gray"
+  });
+  const view = new MapView({
+    container: "viewDiv",
+    map: map,
+    center: [-94.962,68.498],
+    zoom: 2
+  });
+ 
+   // Adding Popups
+    const popup = {
+      "title": "Province or territory:",
+     "content": "{PRENAME}"
+    }
+    
+// Adding Canada Map
+  const canada = new FeatureLayer({
+    url: "https://luna.flemingcollege.ca/arcgis/rest/services/Geom99lab2/kchehbouCanada/MapServer/0",
+	outFields: ["PRENAME"],
+    popupTemplate: popup
+  });
+  map.add(canada, 0);
+  });
+</script>
+
+</head>
+<body>
+<div class="map" id="viewDiv"></div>
+
+</body>
+</html>
