@@ -3317,7 +3317,7 @@ input, select, textarea {
 
 			#wrapper section > .content {
 				grid-area: content;
-				max-width: 60rem;
+				max-width: 80rem;
 				position: relative;
 			}
 
